@@ -10,7 +10,6 @@
 		1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAABF2A0F77D700674FAC /* AppDelegate.swift */; };
 		1D8DAAC22A0F77D700674FAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAAC12A0F77D700674FAC /* SceneDelegate.swift */; };
 		1D8DAAC42A0F77D700674FAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAAC32A0F77D700674FAC /* ViewController.swift */; };
-		1D8DAAC72A0F77D700674FAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAAC52A0F77D700674FAC /* Main.storyboard */; };
 		1D8DAAC92A0F77D900674FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAAC82A0F77D900674FAC /* Assets.xcassets */; };
 		1D8DAACC2A0F77D900674FAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAACA2A0F77D900674FAC /* LaunchScreen.storyboard */; };
 		1D8DAAF62A0F7D7400674FAC /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAAF52A0F7D7400674FAC /* UIFont+.swift */; };
@@ -34,6 +33,8 @@
 		1D8DAB242A10E6B900674FAC /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB182A10E6B900674FAC /* Roboto-Italic.ttf */; };
 		1D8DAB252A10E6B900674FAC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB192A10E6B900674FAC /* Roboto-ThinItalic.ttf */; };
 		1D8DAB262A10E6B900674FAC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */; };
+		36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */; };
+		36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7EF2A114AA10038FD91 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,6 @@
 		1D8DAABF2A0F77D700674FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D8DAAC12A0F77D700674FAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1D8DAAC32A0F77D700674FAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1D8DAAC62A0F77D700674FAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D8DAAC82A0F77D900674FAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D8DAACB2A0F77D900674FAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D8DAACD2A0F77D900674FAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +66,8 @@
 		1D8DAB182A10E6B900674FAC /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		1D8DAB192A10E6B900674FAC /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
+		36FCD7EF2A114AA10038FD91 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +100,9 @@
 		1D8DAABE2A0F77D700674FAC /* Lotte-Cinema */ = {
 			isa = PBXGroup;
 			children = (
-				1D8DAADE2A0F788800674FAC /* Resource */,
 				1D8DAADD2A0F787100674FAC /* Supports */,
 				1D8DAAD32A0F782500674FAC /* Source */,
-				1D8DAAC52A0F77D700674FAC /* Main.storyboard */,
+				1D8DAADE2A0F788800674FAC /* Resource */,
 			);
 			path = "Lotte-Cinema";
 			sourceTree = "<group>";
@@ -131,6 +132,7 @@
 				1D8DAAF52A0F7D7400674FAC /* UIFont+.swift */,
 				1D8DAAF72A0F812600674FAC /* UIColor+.swift */,
 				1D8DAAF92A0F81DC00674FAC /* UIView+.swift */,
+				36FCD7EF2A114AA10038FD91 /* UIImage+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 		1D8DAADF2A0F789600674FAC /* Literals */ = {
 			isa = PBXGroup;
 			children = (
+				36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -315,7 +318,6 @@
 				1D8DAB1D2A10E6B900674FAC /* Roboto-Regular.ttf in Resources */,
 				1D8DAB0B2A10E6AC00674FAC /* NotoSansKR-Black.otf in Resources */,
 				1D8DAB262A10E6B900674FAC /* Roboto-Thin.ttf in Resources */,
-				1D8DAAC72A0F77D700674FAC /* Main.storyboard in Resources */,
 				1D8DAB1E2A10E6B900674FAC /* Roboto-Black.ttf in Resources */,
 				1D8DAB212A10E6B900674FAC /* Roboto-MediumItalic.ttf in Resources */,
 				1D8DAB1C2A10E6B900674FAC /* Roboto-Medium.ttf in Resources */,
@@ -336,6 +338,8 @@
 				1D8DAAC42A0F77D700674FAC /* ViewController.swift in Sources */,
 				1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */,
 				1D8DAAC22A0F77D700674FAC /* SceneDelegate.swift in Sources */,
+				36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */,
+				36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */,
 				1D8DAAF82A0F812600674FAC /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,14 +347,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1D8DAAC52A0F77D700674FAC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1D8DAAC62A0F77D700674FAC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1D8DAACA2A0F77D900674FAC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
