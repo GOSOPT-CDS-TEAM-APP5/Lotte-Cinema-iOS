@@ -16,5 +16,7 @@ enum ImageLiterals {
     static var iconMypage: UIImage { .load(name: "icon_mypage") }
     static var iconPopcorn: UIImage { .load(name: "icon_popcorn") }
     static var iconTicket: UIImage { .load(name: "icon_ticket") }
+    static var icHome: UIImage { .load(name: "icHome") }
+    static var icBack: UIImage { .load(name: "icBack") }
     
 }
