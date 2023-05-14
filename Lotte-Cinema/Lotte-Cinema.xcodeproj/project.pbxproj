@@ -34,7 +34,6 @@
 		1D8DAB242A10E6B900674FAC /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB182A10E6B900674FAC /* Roboto-Italic.ttf */; };
 		1D8DAB252A10E6B900674FAC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB192A10E6B900674FAC /* Roboto-ThinItalic.ttf */; };
 		1D8DAB262A10E6B900674FAC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */; };
-		1D8DAB2C2A10F41A00674FAC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB2B2A10F41A00674FAC /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +66,6 @@
 		1D8DAB182A10E6B900674FAC /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		1D8DAB192A10E6B900674FAC /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		1D8DAB2B2A10F41A00674FAC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 		1D8DAAB32A0F77D700674FAC = {
 			isa = PBXGroup;
 			children = (
-				1D8DAB2B2A10F41A00674FAC /* .gitignore */,
 				1D8DAABE2A0F77D700674FAC /* Lotte-Cinema */,
 				1D8DAABD2A0F77D700674FAC /* Products */,
 			);
@@ -308,7 +305,6 @@
 				1D8DAB0E2A10E6AC00674FAC /* NotoSansKR-Thin.otf in Resources */,
 				1D8DAB092A10E6AC00674FAC /* NotoSansKR-Medium.otf in Resources */,
 				1D8DAB222A10E6B900674FAC /* Roboto-BlackItalic.ttf in Resources */,
-				1D8DAB2C2A10F41A00674FAC /* .gitignore in Resources */,
 				1D8DAB202A10E6B900674FAC /* Roboto-LightItalic.ttf in Resources */,
 				1D8DAB1B2A10E6B900674FAC /* Roboto-Bold.ttf in Resources */,
 				1D8DAACC2A0F77D900674FAC /* LaunchScreen.storyboard in Resources */,
