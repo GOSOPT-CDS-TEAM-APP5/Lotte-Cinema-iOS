@@ -1,6 +1,7 @@
 import UIKit
 
 enum ImageLiterals {
+    //MARK: - icon
     static var icCheck: UIImage { .load(name: "ic_check") }
     static var icChevronRight: UIImage { .load(name: "ic_chevron_right") }
     static var icClose: UIImage { .load(name: "ic_close") }
@@ -18,5 +19,17 @@ enum ImageLiterals {
     static var iconTicket: UIImage { .load(name: "icon_ticket") }
     static var icHome: UIImage { .load(name: "icHome") }
     static var icBack: UIImage { .load(name: "icBack") }
+    static var icChalotte: UIImage { .load(name: "icChalotte")}
+    static var icSplex: UIImage { .load(name: "icSplex")}
+    static var icSuperS: UIImage { .load(name: "icSuperS")}
+    static var icSuper4d: UIImage { .load(name: "icSuper4d")}
+    static var icColourium: UIImage { .load(name: "icColourium")}
+    static var icCineCouple: UIImage { .load(name: "icCineCouple")}
+    static var icCineComport: UIImage { .load(name: "icCineComport")}
+    static var icCineFamily: UIImage { .load(name: "icCineFamily")}
     
+    
+    //MARK: - image
+    static var imgGog: UIImage { .load(name: "imgGog") }
+    static var imgGogBackground: UIImage { .load(name: "imgGogBackground") }
 }
