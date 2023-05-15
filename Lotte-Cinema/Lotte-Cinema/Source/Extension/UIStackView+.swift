@@ -1,8 +1,11 @@
-//
-//  UIStackView+.swift
-//  Lotte-Cinema
-//
-//  Created by 박익범 on 2023/05/15.
-//
+import UIKit
 
-import Foundation
+extension UIStackView {
+    
+    func addArangeSubViews(_ views: UIView...) {
+        views.forEach {
+            self.addArrangedSubview($0)
+        }
+    }
+    
+}
