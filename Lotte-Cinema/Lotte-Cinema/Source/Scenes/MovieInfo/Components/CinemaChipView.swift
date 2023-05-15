@@ -1,8 +1,37 @@
-//
-//  CinemaChipView.swift
-//  Lotte-Cinema
-//
-//  Created by 박익범 on 2023/05/15.
-//
+import UIKit
+import Then
+import SnapKit
 
-import Foundation
+class CinemaChipView: UIView {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    init(image: UIImage) {
+        super.init(frame: .zero)
+        self.bindImage(image: image)
+        self.setLayout()
+    }
+    
+    private func bindImage(image: UIImage) {
+        self.imageView.image = image
+    }
+    
+    private func setLayout() {
+        self.addSubview(imageView)
+        self.layer.borderColor = UIColor.g_200.cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 13
+        self.backgroundColor = .g_50
+        
+        imageView.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+//            $0.leading.trailing.equalToSuperview().inset(10)
+//            $0.top.bottom.equalToSuperview().inset(2)
+        }
+    }
+    
+    private let imageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+    }
+}
