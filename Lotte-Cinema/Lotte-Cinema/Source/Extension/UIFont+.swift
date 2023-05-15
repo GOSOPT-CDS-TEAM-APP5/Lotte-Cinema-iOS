@@ -11,7 +11,7 @@ extension UIFont {
     static func NotoSansLight(ofSize size: CGFloat) -> UIFont{
         return UIFont(name: "NotoSansKR-Light", size: size)!
     }
-    static func NotoSansMedium(ofSize size: CGFloat) -> UIFont{
+    @objc class func NotoSansMedium(ofSize size: CGFloat) -> UIFont{
         return UIFont(name: "NotoSansKR-Medium", size: size)!
     }
     static func NotoSansRegular(ofSize size: CGFloat) -> UIFont{
