@@ -33,6 +33,9 @@
 		1D8DAB242A10E6B900674FAC /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB182A10E6B900674FAC /* Roboto-Italic.ttf */; };
 		1D8DAB252A10E6B900674FAC /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB192A10E6B900674FAC /* Roboto-ThinItalic.ttf */; };
 		1D8DAB262A10E6B900674FAC /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */; };
+		1D9E91D52A162940003C2AF4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9E91D42A162940003C2AF4 /* SnapKit */; };
+		1D9E91D82A16294C003C2AF4 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9E91D72A16294C003C2AF4 /* Then */; };
+		1D9E91DB2A1629BC003C2AF4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9E91DA2A1629BC003C2AF4 /* Alamofire */; };
 		36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */; };
 		36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7EF2A114AA10038FD91 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9E91DB2A1629BC003C2AF4 /* Alamofire in Frameworks */,
+				1D9E91D52A162940003C2AF4 /* SnapKit in Frameworks */,
+				1D9E91D82A16294C003C2AF4 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +267,11 @@
 			dependencies = (
 			);
 			name = "Lotte-Cinema";
+			packageProductDependencies = (
+				1D9E91D42A162940003C2AF4 /* SnapKit */,
+				1D9E91D72A16294C003C2AF4 /* Then */,
+				1D9E91DA2A1629BC003C2AF4 /* Alamofire */,
+			);
 			productName = "Lotte-Cinema";
 			productReference = 1D8DAABC2A0F77D700674FAC /* Lotte-Cinema.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +300,11 @@
 				Base,
 			);
 			mainGroup = 1D8DAAB32A0F77D700674FAC;
+			packageReferences = (
+				1D9E91D32A162940003C2AF4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1D9E91D62A16294C003C2AF4 /* XCRemoteSwiftPackageReference "Then" */,
+				1D9E91D92A1629BC003C2AF4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1D8DAABD2A0F77D700674FAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -548,6 +564,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D9E91D32A162940003C2AF4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		1D9E91D62A16294C003C2AF4 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		1D9E91D92A1629BC003C2AF4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D9E91D42A162940003C2AF4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D9E91D32A162940003C2AF4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1D9E91D72A16294C003C2AF4 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D9E91D62A16294C003C2AF4 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		1D9E91DA2A1629BC003C2AF4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D9E91D92A1629BC003C2AF4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D8DAAB42A0F77D700674FAC /* Project object */;
 }
