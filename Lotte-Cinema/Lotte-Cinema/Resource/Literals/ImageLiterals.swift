@@ -1,17 +1,17 @@
 import UIKit
 
 enum ImageLiterals {
-    static var icCheck: UIImage { .load(name: "ic_check") }
-    static var icChevronRight: UIImage { .load(name: "ic_chevron_right") }
-    static var icClose: UIImage { .load(name: "ic_close") }
-    static var icEvent: UIImage { .load(name: "ic_event") }
-    static var icGrayHeart: UIImage { .load(name: "ic_heart_3") }
-    static var icFillHeart: UIImage { .load(name: "ic_heart_2_filled") }
-    static var icUnFillHeart: UIImage { .load(name: "ic_heart_2_unfilled") }
-    static var icShakePhone: UIImage { .load(name: "ic_shake_phone") }
-    static var icShakeTicket: UIImage { .load(name: "ic_shake_ticket") }
-    static var icShare: UIImage { .load(name: "ic_share") }
-    static var icStar: UIImage { .load(name: "ic_star") }
+    static var iconCheck: UIImage { .load(name: "ic_check") }
+    static var iconChevronRight: UIImage { .load(name: "ic_chevron_right") }
+    static var iconClose: UIImage { .load(name: "ic_close") }
+    static var iconEvent: UIImage { .load(name: "ic_event") }
+    static var iconGrayHeart: UIImage { .load(name: "ic_heart_3") }
+    static var iconFillHeart: UIImage { .load(name: "ic_heart_2_filled") }
+    static var iconUnFillHeart: UIImage { .load(name: "ic_heart_2_unfilled") }
+    static var iconShakePhone: UIImage { .load(name: "ic_shake_phone") }
+    static var iconShakeTicket: UIImage { .load(name: "ic_shake_ticket") }
+    static var iconShare: UIImage { .load(name: "ic_share") }
+    static var iconStar: UIImage { .load(name: "ic_star") }
     static var iconMenu: UIImage { .load(name: "icon_menu") }
     static var iconMypage: UIImage { .load(name: "icon_mypage") }
     static var iconPopcorn: UIImage { .load(name: "icon_popcorn") }
