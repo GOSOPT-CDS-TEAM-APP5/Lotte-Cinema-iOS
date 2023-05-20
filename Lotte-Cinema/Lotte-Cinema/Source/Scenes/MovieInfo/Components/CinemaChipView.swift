@@ -26,8 +26,6 @@ class CinemaChipView: UIView {
         
         imageView.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
-//            $0.leading.trailing.equalToSuperview().inset(10)
-//            $0.top.bottom.equalToSuperview().inset(2)
         }
     }
     

@@ -27,9 +27,22 @@ enum ImageLiterals {
     static var icCineCouple: UIImage { .load(name: "icCineCouple")}
     static var icCineComport: UIImage { .load(name: "icCineComport")}
     static var icCineFamily: UIImage { .load(name: "icCineFamily")}
+    static var icExpand: UIImage { .load(name: "icExpand") }
+    
+    //MARK: - profileImage
+    static var adam_warlock: UIImage { .load(name: "adam_warlock") }
+    static var drax: UIImage { .load(name: "drax") }
+    static var gamora: UIImage { .load(name: "gamora") }
+    static var groot: UIImage { .load(name: "groot") }
+    static var james_gunn: UIImage { .load(name: "james_gunn") }
+    static var mantis: UIImage { .load(name: "mantis") }
+    static var nebula: UIImage { .load(name: "nebula") }
+    static var rocket: UIImage { .load(name: "rocket") }
+    static var star_road: UIImage { .load(name: "star_road") }
     
     
     //MARK: - image
     static var imgGog: UIImage { .load(name: "imgGog") }
     static var imgGogBackground: UIImage { .load(name: "imgGogBackground") }
+    static var imgAudienceInfo: UIImage { .load(name: "imgAudienceInfo") }
 }

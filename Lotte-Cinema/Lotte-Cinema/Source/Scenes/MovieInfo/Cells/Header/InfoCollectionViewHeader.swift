@@ -2,10 +2,17 @@ import UIKit
 import SnapKit
 import Then
 
-class InfoTableViewHeader: UIView {
+class InfoCollectionViewHeader: UICollectionReusableView {
+    static let identifier: String = "InfoCollectionViewHeader"
+    
     init() {
         super.init(frame: .zero)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.setLayout()
+        self.bindData()
     }
     
     required init?(coder: NSCoder) {
@@ -13,9 +20,15 @@ class InfoTableViewHeader: UIView {
     }
     
     /**
-     이거 도대체 왜,, 리딩 트레일링으로 오토레이아웃 잡으려하면 난리가 나는질 모르겟네..
-     혹시나 이유를 아신다면 살려주세요
+     추후 서버 연동시 수정
      */
+    internal func bindData() {
+        self.movieAudienceInfoView.bindTextData(audienceRating: 9.6,
+                                                reservationRating: 35.5,
+                                                cumulativeNumber: 1306526)
+    }
+    
+    
     private func setLayout() {
         self.addSubview(contentView)
         contentView.snp.makeConstraints {
@@ -24,7 +37,7 @@ class InfoTableViewHeader: UIView {
         contentView.addSubviews(backGroundImageView, contentBackgroundView)
         
         self.backGroundImageView.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).offset(49)
+            $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
         self.contentBackgroundView.snp.makeConstraints {
@@ -35,7 +48,7 @@ class InfoTableViewHeader: UIView {
         contentBackgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         contentBackgroundView.layer.cornerRadius = 10
         
-        self.contentBackgroundView.addSubviews(movieImageView, titleLabel, descriptionLabel, cinemaChipInfoView)
+        self.contentBackgroundView.addSubviews(movieImageView, titleLabel, descriptionLabel, cinemaChipInfoView, movieAudienceInfoView, movieInfoTabbar)
         
         movieImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(-30)
@@ -47,7 +60,6 @@ class InfoTableViewHeader: UIView {
         cinemaChipInfoView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(self.movieImageView.snp.bottom).offset(13)
-            $0.bottom.equalToSuperview().inset(19)
             $0.height.equalTo(52)
             $0.width.equalTo(UIScreen.main.bounds.width - 46)
         }
@@ -62,6 +74,16 @@ class InfoTableViewHeader: UIView {
             $0.leading.equalTo(self.titleLabel.snp.leading)
             $0.width.equalTo(128 * UIScreen.main.bounds.width / 375.0)
             $0.top.equalTo(self.titleLabel.snp.bottom).offset(12)
+        }
+        
+        movieAudienceInfoView.snp.makeConstraints {
+            $0.top.equalTo(self.cinemaChipInfoView.snp.bottom).offset(17)
+            $0.height.equalTo(84)
+            $0.leading.trailing.equalToSuperview()
+        }
+        movieInfoTabbar.snp.makeConstraints {
+            $0.top.equalTo(movieAudienceInfoView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
     
@@ -88,4 +110,6 @@ class InfoTableViewHeader: UIView {
         $0.text = "액션/미국\n2023.05.03 개봉    150분"
     }
     private let cinemaChipInfoView = CinemaInfoView()
+    private let movieAudienceInfoView = MovieAudienceInfoView()
+    private let movieInfoTabbar = MovieInfoTabbar()
 }
