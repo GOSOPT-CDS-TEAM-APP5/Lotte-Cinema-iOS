@@ -54,6 +54,7 @@
 		36A6D3422A189E5000D71840 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3412A189E5000D71840 /* DataModel.swift */; };
 		36A6D3442A18D40100D71840 /* TheaterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3432A18D40100D71840 /* TheaterHeaderView.swift */; };
 		36A6D3462A18E29C00D71840 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3452A18E29C00D71840 /* NavigationBarView.swift */; };
+		36A6D3482A19E68400D71840 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3472A19E68400D71840 /* UIButton+.swift */; };
 		36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */; };
 		36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7EF2A114AA10038FD91 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,7 @@
 		36A6D3412A189E5000D71840 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		36A6D3432A18D40100D71840 /* TheaterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterHeaderView.swift; sourceTree = "<group>"; };
 		36A6D3452A18E29C00D71840 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		36A6D3472A19E68400D71840 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		36FCD7EF2A114AA10038FD91 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +182,7 @@
 				1D8DAAF92A0F81DC00674FAC /* UIView+.swift */,
 				36FCD7EF2A114AA10038FD91 /* UIImage+.swift */,
 				369E1B802A16413B00E46841 /* UIStackView+.swift */,
+				36A6D3472A19E68400D71840 /* UIButton+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				1D8DAAC42A0F77D700674FAC /* ViewController.swift in Sources */,
 				1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */,
 				369E1B7D2A1640FA00E46841 /* RunningTimeSelectView.swift in Sources */,
+				36A6D3482A19E68400D71840 /* UIButton+.swift in Sources */,
 				36A6D3442A18D40100D71840 /* TheaterHeaderView.swift in Sources */,
 				1D8DAAC22A0F77D700674FAC /* SceneDelegate.swift in Sources */,
 				369E1B812A16413B00E46841 /* UIStackView+.swift in Sources */,
