@@ -26,6 +26,14 @@ final class RunningTimeSelectView: UIView {
         
     }
     
+    private let selectTheaterButton = UIButton().then {
+        $0.setTitle("영화관 선택", for: .normal)
+        $0.titleLabel?.font = .NotoSansRegular(ofSize: 10)
+        $0.setTitleColor(UIColor.g_400, for: .normal)
+        $0.setUnderline()
+        $0.backgroundColor = .white
+    }
+    
     private let headerView = MovieHeaderView()
     
     
@@ -47,7 +55,7 @@ final class RunningTimeSelectView: UIView {
     
     private func setViewHierarchy() {
         self.backgroundColor = .white
-        self.addSubviews(navigationView,collectionView)
+        self.addSubviews(navigationView,collectionView,selectTheaterButton)
     }
     
     private func setConstraints() {
@@ -59,6 +67,12 @@ final class RunningTimeSelectView: UIView {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(navigationView.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
+        }
+        selectTheaterButton.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.top).offset(122)
+            $0.height.equalTo(75)
+            $0.width.equalTo(77)
+            $0.trailing.equalToSuperview().inset(10)
         }
     }
     
@@ -117,6 +131,8 @@ extension RunningTimeSelectView {
                     elementKind: UICollectionView.elementKindSectionFooter,
                     alignment: .bottom
                 )
+                
+                
                 
                 section.boundarySupplementaryItems = [header,footer]
                 
