@@ -51,6 +51,9 @@
 		36A6D3182A16B6D300D71840 /* LineFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3172A16B6D300D71840 /* LineFooterView.swift */; };
 		36A6D31A2A16CAC600D71840 /* TimeSelectCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3192A16CAC600D71840 /* TimeSelectCVC.swift */; };
 		36A6D31C2A16CCD900D71840 /* TimeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D31B2A16CCD900D71840 /* TimeCVC.swift */; };
+		36A6D3422A189E5000D71840 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3412A189E5000D71840 /* DataModel.swift */; };
+		36A6D3442A18D40100D71840 /* TheaterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3432A18D40100D71840 /* TheaterHeaderView.swift */; };
+		36A6D3462A18E29C00D71840 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A6D3452A18E29C00D71840 /* NavigationBarView.swift */; };
 		36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */; };
 		36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7EF2A114AA10038FD91 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +101,9 @@
 		36A6D3172A16B6D300D71840 /* LineFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFooterView.swift; sourceTree = "<group>"; };
 		36A6D3192A16CAC600D71840 /* TimeSelectCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectCVC.swift; sourceTree = "<group>"; };
 		36A6D31B2A16CCD900D71840 /* TimeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCVC.swift; sourceTree = "<group>"; };
+		36A6D3412A189E5000D71840 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		36A6D3432A18D40100D71840 /* TheaterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterHeaderView.swift; sourceTree = "<group>"; };
+		36A6D3452A18E29C00D71840 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		36FCD7EF2A114AA10038FD91 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +187,7 @@
 		1D8DAAD62A0F783900674FAC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				36A6D3412A189E5000D71840 /* DataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 			children = (
 				369E1B7C2A1640FA00E46841 /* RunningTimeSelectView.swift */,
 				36115F992A16678B008C0F77 /* NormalButton.swift */,
+				36A6D3452A18E29C00D71840 /* NavigationBarView.swift */,
 			);
 			path = Componenets;
 			sourceTree = "<group>";
@@ -357,6 +365,7 @@
 				36A6D3192A16CAC600D71840 /* TimeSelectCVC.swift */,
 				36A6D31B2A16CCD900D71840 /* TimeCVC.swift */,
 				36A6D3172A16B6D300D71840 /* LineFooterView.swift */,
+				36A6D3432A18D40100D71840 /* TheaterHeaderView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -482,6 +491,7 @@
 				1D8DAAC42A0F77D700674FAC /* ViewController.swift in Sources */,
 				1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */,
 				369E1B7D2A1640FA00E46841 /* RunningTimeSelectView.swift in Sources */,
+				36A6D3442A18D40100D71840 /* TheaterHeaderView.swift in Sources */,
 				1D8DAAC22A0F77D700674FAC /* SceneDelegate.swift in Sources */,
 				369E1B812A16413B00E46841 /* UIStackView+.swift in Sources */,
 				36A6D3162A16B11E00D71840 /* DateSelectUnitCVC.swift in Sources */,
@@ -489,9 +499,11 @@
 				36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */,
 				369E1B852A1643F900E46841 /* TheaterUnitCVC.swift in Sources */,
 				36115F9C2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift in Sources */,
+				36A6D3422A189E5000D71840 /* DataModel.swift in Sources */,
 				1D8DAAF82A0F812600674FAC /* UIColor+.swift in Sources */,
 				369E1B832A16419600E46841 /* CollectionViewCellReuseProtocol.swift in Sources */,
 				36A6D3182A16B6D300D71840 /* LineFooterView.swift in Sources */,
+				36A6D3462A18E29C00D71840 /* NavigationBarView.swift in Sources */,
 				36A6D31A2A16CAC600D71840 /* TimeSelectCVC.swift in Sources */,
 				369E1B7F2A16411D00E46841 /* MovieHeaderView.swift in Sources */,
 				36115F9A2A16678B008C0F77 /* NormalButton.swift in Sources */,
