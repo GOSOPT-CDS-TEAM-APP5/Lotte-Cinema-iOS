@@ -13,6 +13,10 @@ final class MovieHeaderView: UICollectionReusableView {
     
     //MARK: Property
     static let identifier = "movieHeaderView"
+    var categoryText = "액션"
+    var countryText = "미국"
+    var dataLabel = "2023.05.03 개봉"
+    var runningTimeText = "150분"
     
     //MARK: UI Components
     private lazy var infoStackview = UIStackView().then {
@@ -24,10 +28,10 @@ final class MovieHeaderView: UICollectionReusableView {
     
     private lazy var vStackView = UIStackView().then {
         $0.axis = .vertical
-        $0.addArrangeSubviews(titleLabel,subinfoStackView,timeinfoStackView,buttonStackView)
+        $0.addArrangeSubviews(titleLabel,subinfoLabel,timeinfoLabel,buttonStackView)
         $0.setCustomSpacing(7, after: titleLabel)
-        $0.setCustomSpacing(4, after: subinfoStackView)
-        $0.setCustomSpacing(9, after: timeinfoStackView)
+        $0.setCustomSpacing(4, after: subinfoLabel)
+        $0.setCustomSpacing(9, after: timeinfoLabel)
         $0.alignment = .leading
     }
     
@@ -42,47 +46,20 @@ final class MovieHeaderView: UICollectionReusableView {
         $0.font = .NotoSansRegular(ofSize: 16)
     }
     
-    private lazy var subinfoStackView = UIStackView().then {
-        $0.addArrangeSubviews(categoryLabel,divideLabel2,countryLabel)
-    }
     
-    private lazy var timeinfoStackView = UIStackView().then {
-        $0.addArrangeSubviews(dateLabel,divideLabel,runningtimeLabel)
-    }
-    
-    private let divideLabel = UILabel().then {
-        $0.text = " ˙ "
+    private lazy var subinfoLabel = UILabel().then {
+        $0.text = categoryText + " ˙ " + countryText
         $0.font = .NotoSansRegular(ofSize: 10)
         $0.textColor = .g_400
     }
     
-    private let divideLabel2 = UILabel().then {
-        $0.text = " ˙ "
+    private lazy var timeinfoLabel  = UILabel().then {
+        $0.text = dataLabel + " ˙ " + runningTimeText
         $0.font = .NotoSansRegular(ofSize: 10)
         $0.textColor = .g_400
     }
     
-    private let categoryLabel = UILabel().then {
-        $0.text = "액션"
-        $0.font = .NotoSansRegular(ofSize: 10)
-        $0.textColor = .g_400
-    }
-    private let countryLabel = UILabel().then {
-        $0.text = "미국"
-        $0.font = .NotoSansRegular(ofSize: 10)
-        $0.textColor = .g_400
-    }
     
-    private let dateLabel = UILabel().then {
-        $0.text = "2023.05.03 개봉"
-        $0.font = .NotoSansRegular(ofSize: 10)
-        $0.textColor = .g_400
-    }
-    private let runningtimeLabel = UILabel().then {
-        $0.text = "150분"
-        $0.font = .NotoSansRegular(ofSize: 10)
-        $0.textColor = .g_400
-    }
     
     private let headerLine = UIView().then {
         $0.backgroundColor = .g_100
