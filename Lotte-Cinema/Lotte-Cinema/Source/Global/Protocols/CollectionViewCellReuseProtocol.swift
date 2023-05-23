@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol CollectionViaewCellReuseProtocol where Self: UICollectionViewCell {
+protocol CollectionViewCellReuseProtocol where Self: UICollectionViewCell {
     static func register(collectionView: UICollectionView)
     static func dequeueReusableCell(collectionView: UICollectionView, indexPath: IndexPath) -> Self
     static var reuseIdentifier: String { get }
 }
 
-extension CollectionViaewCellReuseProtocol {
+extension CollectionViewCellReuseProtocol {
     static func register(collectionView: UICollectionView) {
         collectionView.register(self, forCellWithReuseIdentifier: self.reuseIdentifier)
     }

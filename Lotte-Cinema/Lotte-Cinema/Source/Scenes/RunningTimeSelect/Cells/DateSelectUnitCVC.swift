@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DateSelectUnitCVC: UICollectionViewCell,CollectionViaewCellReuseProtocol {
+class DateSelectUnitCVC: UICollectionViewCell,CollectionViewCellReuseProtocol {
     
     enum Weekday: String {
         case mon,tue,wed,thu,fri = "평일"

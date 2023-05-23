@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TimeCVC: UICollectionViewCell, CollectionViaewCellReuseProtocol {
+class TimeCVC: UICollectionViewCell, CollectionViewCellReuseProtocol {
     
     //MARK: UI Components
     let headerView = TheaterHeaderView()

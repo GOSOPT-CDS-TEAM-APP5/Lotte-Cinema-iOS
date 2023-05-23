@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TheaterUnitCVC: UICollectionViewCell, CollectionViaewCellReuseProtocol {
+class TheaterUnitCVC: UICollectionViewCell, CollectionViewCellReuseProtocol {
     
     //MARK: UI Components
     let theaterLabel = UILabel().then {

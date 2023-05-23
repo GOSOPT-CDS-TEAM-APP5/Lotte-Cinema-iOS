@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class TimeSelectCVC: UICollectionViewCell, CollectionViaewCellReuseProtocol {
+class TimeSelectCVC: UICollectionViewCell, CollectionViewCellReuseProtocol {
     
     //MARK: Property
     lazy var theaterInfo: TheaterResponse = TheaterResponse(theaterName: "", multiplexList: cinemaList) {
