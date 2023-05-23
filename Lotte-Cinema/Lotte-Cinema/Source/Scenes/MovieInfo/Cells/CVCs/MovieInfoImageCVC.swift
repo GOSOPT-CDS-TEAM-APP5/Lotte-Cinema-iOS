@@ -18,7 +18,8 @@ class MovieInfoImageCVC: UICollectionViewCell {
     }
     
     private func setLayout() {
-        self.addSubview(imageView)
+        self.contentView.backgroundColor = .black
+        self.contentView.addSubview(imageView)
         imageView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.equalToSuperview()
         }

@@ -45,4 +45,16 @@ enum ImageLiterals {
     static var imgGog: UIImage { .load(name: "imgGog") }
     static var imgGogBackground: UIImage { .load(name: "imgGogBackground") }
     static var imgAudienceInfo: UIImage { .load(name: "imgAudienceInfo") }
+    static var img_kbbanner: UIImage { .load(name: "img_kbbanner") }
+    static var imgTeaser1: UIImage { .load(name: "imgTeaser1") }
+    static var imgTeaser2: UIImage { .load(name: "imgTeaser2") }
+    static var imgTeaser3: UIImage { .load(name: "imgTeaser3") }
+    static var imgTeaser4: UIImage { .load(name: "imgTeaser4") }
+    static var imgTeaser5: UIImage { .load(name: "imgTeaser5") }
+    static var gog_poster_still_cut: UIImage { .load(name: "gog_poster_still_cut")}
+    static var still_cut1: UIImage { .load(name: "still_cut1")}
+    static var still_cut2: UIImage { .load(name: "still_cut2")}
+    static var still_cut3: UIImage { .load(name: "still_cut3")}
+    static var still_cut4: UIImage { .load(name: "still_cut4")}
+    static var still_cut5: UIImage { .load(name: "still_cut5")}
 }

@@ -46,7 +46,11 @@ class MovieInfoSectionHeaderView: UICollectionReusableView {
                 self.titleLabel.textColor = .black
             case .trailer:
                 self.backgroundColor = .black
-                self.addSubview(self.rowCountLabel)
+                self.addSubviews(self.rowCountLabel, self.paddingView)
+                self.paddingView.snp.makeConstraints {
+                    $0.top.leading.trailing.equalToSuperview()
+                    $0.height.equalTo(12)
+                }
                 self.rowCountLabel.snp.makeConstraints {
                     $0.leading.equalTo(self.titleLabel.snp.trailing).offset(5)
                     $0.centerY.equalTo(self.titleLabel)
@@ -68,6 +72,10 @@ class MovieInfoSectionHeaderView: UICollectionReusableView {
                 self.rowCountLabel.textColor = .white
             }
         }
+    }
+    
+    private let paddingView = UIView().then {
+        $0.backgroundColor = .white
     }
     
     private let titleLabel = UILabel().then {
