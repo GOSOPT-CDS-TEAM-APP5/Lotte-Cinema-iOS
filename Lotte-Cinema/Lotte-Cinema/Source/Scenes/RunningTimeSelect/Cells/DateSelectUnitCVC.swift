@@ -9,12 +9,6 @@ import UIKit
 
 class DateSelectUnitCVC: UICollectionViewCell {
     
-    enum Weekday: String {
-        case mon,tue,wed,thu,fri = "평일"
-        case sat = "토"
-        case sun = "일"
-    }
-    
     
     private let dateLabel = UILabel().then {
         $0.font = .RobotoMedium(ofSize: 16)
@@ -58,6 +52,14 @@ class DateSelectUnitCVC: UICollectionViewCell {
     }
     
     func configure(date: String, weekDay: String){
+        switch weekDay {
+        case "토":
+            weekDayLabel.textColor = .sm_blue
+        case "일":
+            weekDayLabel.textColor = .sm_red
+        default:
+            weekDayLabel.textColor = .black
+        }
         dateLabel.text = date
         weekDayLabel.text = weekDay
     }
@@ -65,14 +67,23 @@ class DateSelectUnitCVC: UICollectionViewCell {
     func configureSelection(isSelected: Bool) {
         if isSelected {
             self.setGradient(color1: .main_1, color2: .main_2)
+            self.weekDayLabel.textColor = .white
+            self.dateLabel.textColor = .white
         } else {
             self.backgroundColor = .white
+            self.dateLabel.textColor = .black
+            switch weekDayLabel.text {
+            case "토":
+                weekDayLabel.textColor = .sm_blue
+            case "일":
+                weekDayLabel.textColor = .sm_red
+            default:
+                weekDayLabel.textColor = .black
+            }
             if let gradientLayer = self.layer.sublayers?.first(where: { $0 is CAGradientLayer }) {
                 gradientLayer.removeFromSuperlayer()
             }
         }
-        dateLabel.textColor = isSelected ? .white : .black
-        weekDayLabel.textColor = isSelected ? .white : .black
     }
 }
 
