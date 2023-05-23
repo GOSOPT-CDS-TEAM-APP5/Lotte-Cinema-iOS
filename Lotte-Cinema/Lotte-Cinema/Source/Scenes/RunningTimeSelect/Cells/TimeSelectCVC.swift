@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class TimeSelectCVC: UICollectionViewCell, CollectionViewCellReuseProtocol {
+class TimeSelectCVC: UICollectionViewCell {
     
     //MARK: Property
     lazy var theaterInfo: TheaterResponse = TheaterResponse(theaterName: "", multiplexList: cinemaList) {
@@ -160,4 +160,8 @@ extension TimeSelectCVC {
         }
         return layout
     }
+}
+
+extension TimeSelectCVC: CollectionViewCellReuseProtocol{
+    
 }

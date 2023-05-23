@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DateSelectUnitCVC: UICollectionViewCell,CollectionViewCellReuseProtocol {
+class DateSelectUnitCVC: UICollectionViewCell {
     
     enum Weekday: String {
         case mon,tue,wed,thu,fri = "평일"
@@ -74,4 +74,8 @@ class DateSelectUnitCVC: UICollectionViewCell,CollectionViewCellReuseProtocol {
         dateLabel.textColor = isSelected ? .white : .black
         weekDayLabel.textColor = isSelected ? .white : .black
     }
+}
+
+extension DateSelectUnitCVC: CollectionViewCellReuseProtocol {
+    
 }

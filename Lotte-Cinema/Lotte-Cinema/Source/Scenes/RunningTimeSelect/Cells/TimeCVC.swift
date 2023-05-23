@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TimeCVC: UICollectionViewCell, CollectionViewCellReuseProtocol {
+class TimeCVC: UICollectionViewCell {
     
     //MARK: UI Components
     let headerView = TheaterHeaderView()
@@ -96,4 +96,8 @@ class TimeCVC: UICollectionViewCell, CollectionViewCellReuseProtocol {
         validSeatLabel.text = valid
         bookSeatLabel.text! += book
     }
+}
+
+extension TimeCVC: CollectionViewCellReuseProtocol{
+    
 }
