@@ -99,7 +99,7 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
                 return UICollectionReusableView()
             }
             return header
-        } else if kind == UICollectionView.elementKindSectionFooter {
+        } else {
             // Dequeue reusable supplementary view for footer
             guard let footer = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
@@ -110,8 +110,6 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
             }
             return footer
         }
-        
-        return UICollectionReusableView()
     }
 }
 
