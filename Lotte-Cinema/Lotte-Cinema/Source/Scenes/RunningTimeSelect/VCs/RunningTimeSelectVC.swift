@@ -99,17 +99,19 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
                 return UICollectionReusableView()
             }
             return header
-        } else {
-            // Dequeue reusable supplementary view for footer
-            guard let footer = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: LineFooterView.identifier,
-                for: indexPath
-            ) as? LineFooterView else {
-                return UICollectionReusableView()
+        } else if kind == "TheaterSelButton" {
+            let buttonView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TheaterSelButton", for: indexPath) as! TheaterSelectButtonView
+            return buttonView} else {
+                // Dequeue reusable supplementary view for footer
+                guard let footer = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: LineFooterView.identifier,
+                    for: indexPath
+                ) as? LineFooterView else {
+                    return UICollectionReusableView()
+                }
+                return footer
             }
-            return footer
-        }
     }
 }
 

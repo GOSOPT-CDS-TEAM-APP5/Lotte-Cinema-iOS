@@ -14,11 +14,13 @@ final class RunningTimeSelectView: UIView {
     
     //MARK: UIComponents
     private let navigationView = NavigationView()
+    let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+    
     
     lazy var collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: createLayout()).then {
         $0.register(MovieHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MovieHeaderView.identifier)
         $0.register(LineFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: LineFooterView.identifier)
-        
+        $0.register(TheaterSelectButtonView.self, forSupplementaryViewOfKind: "TheaterSelButton", withReuseIdentifier: "TheaterSelButton")
         TheaterUnitCVC.register(collectionView: $0)
         DateSelectUnitCVC.register(collectionView: $0)
         TimeSelectCVC.register(collectionView: $0)
@@ -55,7 +57,9 @@ final class RunningTimeSelectView: UIView {
     
     private func setViewHierarchy() {
         self.backgroundColor = .white
-        self.addSubviews(navigationView,collectionView,selectTheaterButton)
+        self.addSubviews(navigationView,collectionView)
+        buttonView.backgroundColor = .white
+        buttonView.addSubview(selectTheaterButton)
     }
     
     private func setConstraints() {
@@ -67,12 +71,6 @@ final class RunningTimeSelectView: UIView {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(navigationView.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
-        }
-        selectTheaterButton.snp.makeConstraints {
-            $0.top.equalTo(collectionView.snp.top).offset(122)
-            $0.height.equalTo(75)
-            $0.width.equalTo(77)
-            $0.trailing.equalToSuperview().inset(10)
         }
     }
     
@@ -118,6 +116,7 @@ extension RunningTimeSelectView {
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
                 
                 
+                
                 section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .continuous
                 
@@ -133,8 +132,16 @@ extension RunningTimeSelectView {
                 )
                 
                 
+                let buttonSize = NSCollectionLayoutSize(widthDimension: .absolute(100), heightDimension: .absolute(50))
+                  let button = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: buttonSize,
+                    elementKind: "TheaterSelButton",
+                    alignment: .trailing
+                  )
+                  
+                  section.boundarySupplementaryItems = [header, footer, button]
                 
-                section.boundarySupplementaryItems = [header,footer]
+                
                 
                 
             case 1: // date select

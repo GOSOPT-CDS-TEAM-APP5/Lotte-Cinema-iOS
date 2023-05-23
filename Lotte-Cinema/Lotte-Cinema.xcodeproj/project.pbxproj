@@ -38,6 +38,7 @@
 		1D9E91DB2A1629BC003C2AF4 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		36115F9A2A16678B008C0F77 /* NormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36115F992A16678B008C0F77 /* NormalButton.swift */; };
 		36115F9C2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36115F9B2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift */; };
+		362D08352A1D37E5002A8076 /* TheaterSelectButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */; };
 		369E1B732A163FB300E46841 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 369E1B722A163FB300E46841 /* SnapKit */; };
 		369E1B762A163FBB00E46841 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 369E1B752A163FBB00E46841 /* Then */; };
 		369E1B792A163FC200E46841 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 369E1B782A163FC200E46841 /* Alamofire */; };
@@ -90,6 +91,7 @@
 		1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		36115F992A16678B008C0F77 /* NormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalButton.swift; sourceTree = "<group>"; };
 		36115F9B2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellReuseProtocol.swift; sourceTree = "<group>"; };
+		362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectButtonView.swift; sourceTree = "<group>"; };
 		369E1B532A156AC100E46841 /* TheaterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectView.swift; sourceTree = "<group>"; };
 		369E1B552A15F8BB00E46841 /* TheaterSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectVC.swift; sourceTree = "<group>"; };
 		369E1B7A2A1640D400E46841 /* RunningTimeSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimeSelectVC.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				36A6D31B2A16CCD900D71840 /* TimeCVC.swift */,
 				36A6D3172A16B6D300D71840 /* LineFooterView.swift */,
 				36A6D3432A18D40100D71840 /* TheaterHeaderView.swift */,
+				362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				1D8DAAF62A0F7D7400674FAC /* UIFont+.swift in Sources */,
 				36A6D31C2A16CCD900D71840 /* TimeCVC.swift in Sources */,
 				1D8DAAC42A0F77D700674FAC /* ViewController.swift in Sources */,
+				362D08352A1D37E5002A8076 /* TheaterSelectButtonView.swift in Sources */,
 				1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */,
 				369E1B7D2A1640FA00E46841 /* RunningTimeSelectView.swift in Sources */,
 				36A6D3482A19E68400D71840 /* UIButton+.swift in Sources */,
