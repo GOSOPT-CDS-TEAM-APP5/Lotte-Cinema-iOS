@@ -4,6 +4,7 @@ import Then
 
 class InfoCollectionViewHeader: UICollectionReusableView {
     static let identifier: String = "InfoCollectionViewHeader"
+    private var descriptionText: String = "액션/미국\n2023.05.03 개봉    "
     
     init() {
         super.init(frame: .zero)
@@ -12,7 +13,6 @@ class InfoCollectionViewHeader: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setLayout()
-        self.bindData()
     }
     
     required init?(coder: NSCoder) {
@@ -22,10 +22,16 @@ class InfoCollectionViewHeader: UICollectionReusableView {
     /**
      추후 서버 연동시 수정
      */
-    internal func bindData() {
-        self.movieAudienceInfoView.bindTextData(audienceRating: 9.6,
-                                                reservationRating: 35.5,
+    internal func bindData(movieName: String,
+                           reservation: Double,
+                           scoreOfStar: Double,
+                           genre: String,
+                           playFullTime: Int) {
+        self.movieAudienceInfoView.bindTextData(audienceRating: scoreOfStar,
+                                                reservationRating: reservation,
                                                 cumulativeNumber: 1306526)
+        self.descriptionLabel.text = "\(genre)/미국\n2023.05.03 개봉    \(playFullTime)분"
+        self.titleLabel.text = movieName
     }
     
     
@@ -101,13 +107,11 @@ class InfoCollectionViewHeader: UICollectionReusableView {
         $0.font = .NotoSansRegular(ofSize: 16)
         $0.textColor = .black
         $0.numberOfLines = 0
-        $0.text = "가디언즈 오브 갤럭시: Volume 3"
     }
     private let descriptionLabel = UILabel().then {
         $0.font = .NotoSansRegular(ofSize: 12)
         $0.textColor = .g_400
         $0.numberOfLines = 0
-        $0.text = "액션/미국\n2023.05.03 개봉    150분"
     }
     private let cinemaChipInfoView = CinemaInfoView()
     private let movieAudienceInfoView = MovieAudienceInfoView()

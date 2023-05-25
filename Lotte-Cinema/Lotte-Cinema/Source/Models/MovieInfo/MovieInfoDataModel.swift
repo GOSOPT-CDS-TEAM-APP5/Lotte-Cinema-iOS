@@ -1,6 +1,24 @@
 import Foundation
 import UIKit
 
+//MARK: Server
+struct MovieInfoDataModel: Codable {
+    let code: Int
+    let message: String
+    let data: MovieInfoData
+}
+
+struct MovieInfoData: Codable {
+    let movieName: String
+    let reservationRatio, scoreOfStar: Double
+    let age, releaseDate: Int
+    let genre: String
+    let playFullTime: Int
+    let synopsis: String
+}
+
+
+//MARK: dummy
 struct ActorDataModel {
     let profileImages: UIImage
     let names: String

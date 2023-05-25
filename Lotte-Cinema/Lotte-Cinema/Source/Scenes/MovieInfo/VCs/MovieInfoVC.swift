@@ -1,6 +1,27 @@
 import UIKit
+import SnapKit
+import Then
+import Alamofire
 
 class MovieInfoVC: UIViewController {
+    /**
+     해당하는 movieID value 변경 시 조회되는 이미지가 달라집니다...
+     */
+    private var _movieID: Int = 1
+    internal var movieID: Int {
+        get {
+            return _movieID
+        }
+        set(id) {
+            _movieID = id
+        }
+    }
+    var movieInfoData: MovieInfoData?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.getMovieInfoData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,13 +216,35 @@ class MovieInfoVC: UIViewController {
     
     private func setLayout() {
         self.navigationController?.navigationBar.isHidden = true
-        self.view.addSubviews(collectionView, navigationView)
+        self.view.addSubviews(collectionView, navigationView, floatingButton)
         navigationView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.height.equalTo(90)
         }
         collectionView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
+        }
+        floatingButton.snp.makeConstraints {
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(9)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(300)
+            $0.height.equalTo(48)
+        }
+    }
+    @objc private func didFloatingButtonTapped() {
+        //영화관 선택 뷰 구현
+    }
+    //MARK: - Network
+    private func getMovieInfoData() {
+        GetService.shared.getService(from: Constants.baseURL + "/detail/\(self.movieID)",
+                                     isTokenUse: false) {
+            (data: MovieInfoDataModel?, error) in
+            guard let data = data else {
+                print("error: \(error?.debugDescription)")
+                return
+            }
+            self.movieInfoData = data.data
+            self.collectionView.reloadData()
         }
     }
     
@@ -210,6 +253,11 @@ class MovieInfoVC: UIViewController {
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
         $0.contentInset = .init(top: 49, left: 0, bottom: 0, right: 0)
         $0.backgroundColor = .black
+    }
+    private lazy var floatingButton = FloatingButtton().then {
+        $0.addTarget(self,
+                     action: #selector(didFloatingButtonTapped),
+                     for: .touchUpInside)
     }
 
 }
@@ -237,6 +285,13 @@ extension MovieInfoVC: UICollectionViewDataSource {
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                                withReuseIdentifier: InfoCollectionViewHeader.identifier,
                                                                                for: indexPath) as? InfoCollectionViewHeader else {return UICollectionReusableView()}
+            if let data = movieInfoData {
+                header.bindData(movieName: data.movieName,
+                                reservation: data.reservationRatio,
+                                scoreOfStar: data.scoreOfStar,
+                                genre: data.genre,
+                                playFullTime: data.playFullTime)
+            }
             return header
         case 1:
             sectionHeader.bindHeader(type: .synopsys)
@@ -278,7 +333,10 @@ extension MovieInfoVC: UICollectionViewDataSource {
             return imageCell
         case 1:
             guard let synopsysCell = collectionView.dequeueReusableCell(withReuseIdentifier: SynopsisCVC.identifier, for: indexPath) as? SynopsisCVC else {return UICollectionViewCell()}
-            synopsysCell.bindText(content: "‘가모라'를 잃고 슬픔에 빠져 있던 ‘피터 퀼'이 위기에 처한 은하계와 동료를 지키기 위해 다시 한번 가디언즈 팀과 힘을 모으고, 성공하지 못할 경우 그들의 마지막이 될지도 모르는 미션에 나서는 이야기")
+            if let data = self.movieInfoData {
+                synopsysCell.bindText(content: data.synopsis)
+            }
+//            synopsysCell.bindText(content: "‘가모라'를 잃고 슬픔에 빠져 있던 ‘피터 퀼'이 위기에 처한 은하계와 동료를 지키기 위해 다시 한번 가디언즈 팀과 힘을 모으고, 성공하지 못할 경우 그들의 마지막이 될지도 모르는 미션에 나서는 이야기")
             return synopsysCell
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ActorBackgroundCVC.identifier, for: indexPath) as? ActorBackgroundCVC else {return UICollectionViewCell()}
