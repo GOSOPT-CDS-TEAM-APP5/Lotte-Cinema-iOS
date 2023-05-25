@@ -233,6 +233,8 @@ class MovieInfoVC: UIViewController {
     }
     @objc private func didFloatingButtonTapped() {
         //영화관 선택 뷰 구현
+        let vc = TheaterSelectVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     //MARK: - Network
     private func getMovieInfoData() {
