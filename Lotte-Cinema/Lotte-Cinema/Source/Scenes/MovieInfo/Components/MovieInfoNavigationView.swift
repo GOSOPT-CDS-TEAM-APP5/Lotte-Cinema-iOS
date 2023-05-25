@@ -4,7 +4,6 @@ import SnapKit
 
 class MovieInfoNavigationView: UIView {
     var backButtonTappedCompletion: (() -> Void)?
-    var homeButtonTappedCompletion: (() -> Void)?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -19,30 +18,20 @@ class MovieInfoNavigationView: UIView {
         guard let completion = backButtonTappedCompletion else {return}
         completion()
     }
-    
-    @objc private func didHomeButtonTapped() {
-        guard let completion = homeButtonTappedCompletion else {return}
-        completion()
-    }
 
     
     private func setLayout() {
         self.backgroundColor = .black
-        self.addSubviews(titleLabel, popButton, homeButton)
+        self.addSubviews(titleLabel, popButton)
         popButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(12)
-            $0.width.height.equalTo(36)
-            $0.bottom.equalToSuperview().inset(13)
-        }
-        homeButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(12)
-            $0.width.height.equalTo(36)
+            $0.width.height.equalTo(44)
             $0.bottom.equalToSuperview().inset(13)
         }
         self.titleLabel.snp.makeConstraints {
             $0.centerY.equalTo(self.popButton)
             $0.leading.equalTo(self.popButton.snp.trailing).offset(74)
-            $0.trailing.equalTo(self.homeButton.snp.leading).inset(-74)
+            $0.trailing.equalToSuperview().inset(122)
         }
     }
     
@@ -58,13 +47,7 @@ class MovieInfoNavigationView: UIView {
         $0.addTarget(self,
                      action: #selector(self.didBackButtonTapped),
                      for: .touchUpInside)
-        $0.setImage(ImageLiterals.icBack, for: .normal)
-    }
-    private lazy var homeButton = UIButton().then {
-        $0.addTarget(self,
-                     action: #selector(self.didHomeButtonTapped),
-                     for: .touchUpInside)
-        $0.setImage(ImageLiterals.icHome, for: .normal)
+        $0.setImage(ImageLiterals.icon_white_back, for: .normal)
     }
 }
 

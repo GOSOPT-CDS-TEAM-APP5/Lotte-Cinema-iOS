@@ -230,6 +230,9 @@ class MovieInfoVC: UIViewController {
             $0.width.equalTo(300)
             $0.height.equalTo(48)
         }
+        self.navigationView.backButtonTappedCompletion = { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
     @objc private func didFloatingButtonTapped() {
         //영화관 선택 뷰 구현

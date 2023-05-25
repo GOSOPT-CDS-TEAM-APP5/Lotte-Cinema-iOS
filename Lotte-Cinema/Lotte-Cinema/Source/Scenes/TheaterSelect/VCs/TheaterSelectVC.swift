@@ -84,6 +84,10 @@ final class TheaterSelectVC: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(48)
         }
+        self.navigationView.backButtonTappCompletion = { [weak self] in
+            guard let self = self else {return}
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     //MARK: - Network
