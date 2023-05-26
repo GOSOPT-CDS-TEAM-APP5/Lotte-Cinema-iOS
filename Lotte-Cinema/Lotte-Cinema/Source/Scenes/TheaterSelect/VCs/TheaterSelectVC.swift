@@ -48,7 +48,7 @@ final class TheaterSelectVC: UIViewController {
     
     private func setLayout() {
         self.view.backgroundColor = .white
-        self.view.addSubviews(navigationView, regionTableView, theaterTableView, collectionView, completeButton, changeTheaterButton)
+        self.view.addSubviews(navigationView, regionTableView, theaterTableView, collectionView, completeButton, changeTheaterButton, collectionViewPlaceholderView)
         self.navigationView.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(7)
             $0.leading.trailing.equalToSuperview()
@@ -83,6 +83,10 @@ final class TheaterSelectVC: UIViewController {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(48)
+        }
+        collectionViewPlaceholderView.snp.makeConstraints {
+            $0.centerY.equalTo(self.collectionView)
+            $0.centerX.equalTo(self.collectionView)
         }
         self.navigationView.backButtonTappCompletion = { [weak self] in
             guard let self = self else {return}
@@ -129,7 +133,11 @@ final class TheaterSelectVC: UIViewController {
         //selectedTheater 배열이 선택된 영화관 값이야!!
         //이걸루 푸쉬해서 넘겨준다음 서버 붙히면 될듯!!
     }
-    
+    private let collectionViewPlaceholderView = UILabel().then {
+        $0.text = "최대 3개까지 선택할 수 있습니다."
+        $0.font = .NotoSansRegular(ofSize: 12)
+        $0.textColor = .black
+    }
     private let navigationView = TheaterSelectNavigationView()
     private let regionTableView = UITableView(frame: .zero, style: .plain).then {
         $0.separatorStyle = .none
@@ -247,6 +255,7 @@ extension TheaterSelectVC: UITableViewDataSource {
                     DispatchQueue.main.async {
                         if self.selectedTheater.count > 0 {
                             self.changeTheaterButton.isHidden = false
+                            self.collectionViewPlaceholderView.isHidden = true
                             self.completeButton.setGradient(color1: .main_1, color2: .main_2)
                         }
                     }
