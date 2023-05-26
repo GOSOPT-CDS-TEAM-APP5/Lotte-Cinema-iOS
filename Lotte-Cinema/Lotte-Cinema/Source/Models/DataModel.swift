@@ -7,7 +7,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct Response: Codable {
     let code: Int
     let message: String
     let data: [TheaterResponse]

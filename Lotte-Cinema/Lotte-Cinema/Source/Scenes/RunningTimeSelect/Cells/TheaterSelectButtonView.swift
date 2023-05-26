@@ -7,6 +7,8 @@
 import UIKit
 
 final class TheaterSelectButtonView: UICollectionReusableView {
+    
+    
     private let selectTheaterButton = UIButton().then {
         $0.setTitle("영화관 선택", for: .normal)
         $0.titleLabel?.font = .NotoSansRegular(ofSize: 10)
