@@ -62,4 +62,7 @@ enum ImageLiterals {
     static var still_cut3: UIImage { .load(name: "still_cut3")}
     static var still_cut4: UIImage { .load(name: "still_cut4")}
     static var still_cut5: UIImage { .load(name: "still_cut5")}
+    
+    static var section_1: UIImage { .load(name: "section_1")}
+    static var section_2: UIImage { .load(name: "section_2")}
 }

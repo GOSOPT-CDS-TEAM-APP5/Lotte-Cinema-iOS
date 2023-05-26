@@ -3,81 +3,101 @@ import SnapKit
 import Then
 
 class ViewController: UIViewController {
+    var homeData: [HomeDataModel] = []
+    var homeImageData: [UIImage] = [ImageLiterals.imgGog, ImageLiterals.imgGog, ImageLiterals.imgGog]
+    var imageData: [UIImage] = [ImageLiterals.section_1, ImageLiterals.section_2]
     
-    let scrollView = UIScrollView()
-    let containerView = UIView()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.getHomeData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupScrollView()
-        addImageViews()
-        setStyle()
+        self.setLayout()
+        self.setConfig()
     }
     
-    func setStyle() {
-        view.backgroundColor = .white
-    }
-    
-    func setupScrollView() {
-        view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        scrollView.addSubview(containerView)
-        containerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalTo(containerView.snp.width).multipliedBy(5)
-            make.top.equalToSuperview().offset(20) // 수정사항 1: containerView의 상단에 20의 여백을 추가합니다.
-            make.bottom.equalToSuperview().offset(-20) // 수정사항 2: containerView의 하단에 20의 여백을 추가합니다.
-        }
-    }
-    
-    func addImageViews() {
-        let imageNames = ["Img1","Img2","Img3","Img4"]
-        var previousImageView: UIImageView?
-        
-        for (index, imageName) in imageNames.enumerated() {
-            let imageView = UIImageView().then {
-                $0.image = UIImage(named: imageName)
-                $0.contentMode = .scaleAspectFill
+    private func getHomeData() {
+        GetService.shared.getService(from: Constants.baseURL + "/main",
+                                     isTokenUse: false) {
+            (data: [HomeDataModel]?, error) in
+            guard let data = data else {
+                print("error: \(error?.debugDescription)")
+                return
             }
-            containerView.addSubview(imageView)
-            
-            imageView.snp.makeConstraints { make in
-                make.left.equalToSuperview().offset(0) // 수정사항 3: 이미지 뷰의 leading에 20의 여백을 추가합니다.
-                make.right.equalToSuperview().offset(0) // 수정사항 4: 이미지 뷰의 trailing에 20의 여백을 추가합니다.
-                make.height.equalTo(600)
-                
-                
-                if let previousImageView = previousImageView {
-                    make.top.equalTo(previousImageView.snp.bottom).offset(20)
-                } else {
-                    make.top.equalToSuperview().offset(20)
-                }
-                
-                if index == imageNames.count - 1 {
-                    make.bottom.equalToSuperview().offset(-20)
-                }
-            }
-            
-            previousImageView = imageView
+            self.homeData = data
+            self.collectionView.reloadData()
         }
+    }
+    
+    private func setLayout() {
+        self.navigationController?.isNavigationBarHidden = true
+        self.view.addSubviews(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.top.bottom.leading.trailing.equalToSuperview()
+        }
+        scrollView.addSubviews(firstImageView, collectionView, secondImageView)
+        firstImageView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.equalTo(self.view.snp.leading)
+            $0.trailing.equalTo(self.view.snp.trailing)
+            $0.height.equalTo(349)
+        }
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(self.firstImageView.snp.bottom)
+            $0.leading.equalTo(self.view.snp.leading)
+            $0.trailing.equalTo(self.view.snp.trailing)
+            $0.height.equalTo(230)
+        }
+        secondImageView.snp.makeConstraints {
+            $0.top.equalTo(self.collectionView.snp.bottom)
+            $0.leading.equalTo(self.view.snp.leading)
+            $0.trailing.equalTo(self.view.snp.trailing)
+            $0.height.equalTo(1938)
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
+    private func setConfig() {
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.register(HomeMovieCVC.self,
+                                     forCellWithReuseIdentifier: HomeMovieCVC.identifier)
+        var layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 12
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 0)
+        layout.itemSize = .init(width: 129, height: 275)
+        self.collectionView.setCollectionViewLayout(layout, animated: false)
+    }
+    private let firstImageView = UIImageView(image: ImageLiterals.section_1)
+    private let secondImageView = UIImageView(image: ImageLiterals.section_2)
+    private let scrollView = UIScrollView()
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
+        $0.contentInsetAdjustmentBehavior = .never
     }
 }
 
-extension UIView {
-    func previousSibling() -> UIView? {
-        guard let superview = superview else { return nil }
-        
-        for index in 1..<superview.subviews.count {
-            if superview.subviews[index] == self {
-                return superview.subviews[index-1]
-            }
-        }
-        
-        return nil
+extension ViewController: UICollectionViewDelegate {}
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return homeData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeMovieCVC.identifier, for: indexPath) as? HomeMovieCVC else {return UICollectionViewCell()}
+        cell.bindText(title: homeData[indexPath.row].movieName,
+                      ratio: homeData[indexPath.row].reservationRatio,
+                      scoreOfStar: homeData[indexPath.row].scoreOfStar,
+                      image: self.homeImageData[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = MovieInfoVC()
+        vc.movieID = homeData[indexPath.row].movieID
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
