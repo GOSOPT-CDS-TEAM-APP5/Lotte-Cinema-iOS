@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5962732A1899160050979A /* MovieChartCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962722A1899160050979A /* MovieChartCVC.swift */; };
+		1D5962752A18991E0050979A /* EventCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962742A18991E0050979A /* EventCVC.swift */; };
+		1D5962772A18992A0050979A /* MovieFeedCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962762A18992A0050979A /* MovieFeedCVC.swift */; };
+		1D5962792A18993D0050979A /* HashtagLottecinemaCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962782A18993D0050979A /* HashtagLottecinemaCVC.swift */; };
+		1D59627B2A18994B0050979A /* SpecialRoomCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59627A2A18994B0050979A /* SpecialRoomCVC.swift */; };
+		1D59627E2A1899610050979A /* FooterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59627D2A1899610050979A /* FooterCVC.swift */; };
+		1D79DBF82A1E7FAF00FAE8E4 /* HashtagLottecinemaV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79DBF72A1E7FAF00FAE8E4 /* HashtagLottecinemaV.swift */; };
+		1D79DBFB2A1E7FB900FAE8E4 /* MovieChartV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79DBFA2A1E7FB800FAE8E4 /* MovieChartV.swift */; };
+		1D79DBFF2A1E7FFC00FAE8E4 /* BannerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79DBFE2A1E7FFC00FAE8E4 /* BannerV.swift */; };
+		1D79DC012A1E841F00FAE8E4 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79DC002A1E841F00FAE8E4 /* BaseVC.swift */; };
 		1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAABF2A0F77D700674FAC /* AppDelegate.swift */; };
 		1D8DAAC22A0F77D700674FAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAAC12A0F77D700674FAC /* SceneDelegate.swift */; };
 		1D8DAAC42A0F77D700674FAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAAC32A0F77D700674FAC /* ViewController.swift */; };
@@ -91,11 +101,24 @@
 		36DAE0F12A1FDAC00028D478 /* TheaterListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAE0F02A1FDAC00028D478 /* TheaterListDataModel.swift */; };
 		36DAE0F22A1FDCEC0028D478 /* TheaterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E1B532A156AC100E46841 /* TheaterSelectView.swift */; };
 		36DAE0F32A1FDCEC0028D478 /* TheaterSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369E1B552A15F8BB00E46841 /* TheaterSelectVC.swift */; };
+		1DA6C68F2A1FD7F900683769 /* MovieChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C68E2A1FD7F900683769 /* MovieChartModel.swift */; };
+		1DA6C6932A1FEF6700683769 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C6922A1FEF6700683769 /* CollectionViewController.swift */; };
+		1DA6C6B62A1FF3DB00683769 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C6B52A1FF3DB00683769 /* ScrollView.swift */; };
 		36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */; };
 		36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7EF2A114AA10038FD91 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D5962722A1899160050979A /* MovieChartCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieChartCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Components/View/MovieChartCVC.swift"; sourceTree = SOURCE_ROOT; };
+		1D5962742A18991E0050979A /* EventCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Components/View/EventCVC.swift"; sourceTree = SOURCE_ROOT; };
+		1D5962762A18992A0050979A /* MovieFeedCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieFeedCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Components/View/MovieFeedCVC.swift"; sourceTree = SOURCE_ROOT; };
+		1D5962782A18993D0050979A /* HashtagLottecinemaCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HashtagLottecinemaCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Components/View/HashtagLottecinemaCVC.swift"; sourceTree = SOURCE_ROOT; };
+		1D59627A2A18994B0050979A /* SpecialRoomCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpecialRoomCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Components/View/SpecialRoomCVC.swift"; sourceTree = SOURCE_ROOT; };
+		1D59627D2A1899610050979A /* FooterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCVC.swift; sourceTree = "<group>"; };
+		1D79DBF72A1E7FAF00FAE8E4 /* HashtagLottecinemaV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagLottecinemaV.swift; sourceTree = "<group>"; };
+		1D79DBFA2A1E7FB800FAE8E4 /* MovieChartV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChartV.swift; sourceTree = "<group>"; };
+		1D79DBFE2A1E7FFC00FAE8E4 /* BannerV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerV.swift; sourceTree = "<group>"; };
+		1D79DC002A1E841F00FAE8E4 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		1D8DAABC2A0F77D700674FAC /* Lotte-Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lotte-Cinema.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8DAABF2A0F77D700674FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D8DAAC12A0F77D700674FAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +147,9 @@
 		1D8DAB182A10E6B900674FAC /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		1D8DAB192A10E6B900674FAC /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		1DA6C68E2A1FD7F900683769 /* MovieChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChartModel.swift; sourceTree = "<group>"; };
+		1DA6C6922A1FEF6700683769 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		1DA6C6B52A1FF3DB00683769 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		36115F992A16678B008C0F77 /* NormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalButton.swift; sourceTree = "<group>"; };
 		36115F9B2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellReuseProtocol.swift; sourceTree = "<group>"; };
 		362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectButtonView.swift; sourceTree = "<group>"; };
@@ -198,6 +224,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D59626D2A1640410050979A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D79DBFA2A1E7FB800FAE8E4 /* MovieChartV.swift */,
+				1D79DBF72A1E7FAF00FAE8E4 /* HashtagLottecinemaV.swift */,
+				1D79DBFE2A1E7FFC00FAE8E4 /* BannerV.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1D8DAAB32A0F77D700674FAC = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +329,7 @@
 				369E1B572A15FA0D00E46841 /* RunningTimeSelect */,
 				369E1B4F2A156A0C00E46841 /* TheaterSelect */,
 				1D8DAAD92A0F784B00674FAC /* Home */,
+				1D79DC002A1E841F00FAE8E4 /* BaseVC.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -310,7 +347,9 @@
 		1D8DAADA2A0F785500674FAC /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				1DA6C6B42A1FF3CA00683769 /* GPT */,
 				1D8DAAC32A0F77D700674FAC /* ViewController.swift */,
+				1DA6C6922A1FEF6700683769 /* CollectionViewController.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -318,6 +357,12 @@
 		1D8DAADB2A0F785E00674FAC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1D5962722A1899160050979A /* MovieChartCVC.swift */,
+				1D5962782A18993D0050979A /* HashtagLottecinemaCVC.swift */,
+				1D5962742A18991E0050979A /* EventCVC.swift */,
+				1D5962762A18992A0050979A /* MovieFeedCVC.swift */,
+				1D59627A2A18994B0050979A /* SpecialRoomCVC.swift */,
+				1D59627D2A1899610050979A /* FooterCVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -325,6 +370,8 @@
 		1D8DAADC2A0F786400674FAC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1DA6C68D2A1FD7EB00683769 /* ViewModel */,
+				1D59626D2A1640410050979A /* View */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -381,6 +428,22 @@
 				1D8DAB082A10E6AC00674FAC /* NotoSansKR-Thin.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		1DA6C68D2A1FD7EB00683769 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1DA6C68E2A1FD7F900683769 /* MovieChartModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1DA6C6B42A1FF3CA00683769 /* GPT */ = {
+			isa = PBXGroup;
+			children = (
+				1DA6C6B52A1FF3DB00683769 /* ScrollView.swift */,
+			);
+			path = GPT;
 			sourceTree = "<group>";
 		};
 		369E1B4F2A156A0C00E46841 /* TheaterSelect */ = {
@@ -689,6 +752,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D79DBFF2A1E7FFC00FAE8E4 /* BannerV.swift in Sources */,
+				1DA6C6B62A1FF3DB00683769 /* ScrollView.swift in Sources */,
+				1D59627B2A18994B0050979A /* SpecialRoomCVC.swift in Sources */,
+				1D5962792A18993D0050979A /* HashtagLottecinemaCVC.swift in Sources */,
+				1DA6C68F2A1FD7F900683769 /* MovieChartModel.swift in Sources */,
+				1D79DBF82A1E7FAF00FAE8E4 /* HashtagLottecinemaV.swift in Sources */,
+				1D79DC012A1E841F00FAE8E4 /* BaseVC.swift in Sources */,
 				36DAE0F22A1FDCEC0028D478 /* TheaterSelectView.swift in Sources */,
 				36DAE0F32A1FDCEC0028D478 /* TheaterSelectVC.swift in Sources */,
 				1D8DAAFA2A0F81DC00674FAC /* UIView+.swift in Sources */,
@@ -697,6 +767,10 @@
 				36DAE0D52A1FCB220028D478 /* PatchService.swift in Sources */,
 				369E1B7B2A1640D400E46841 /* RunningTimeSelectVC.swift in Sources */,
 				1D8DAAF62A0F7D7400674FAC /* UIFont+.swift in Sources */,
+				1D59627E2A1899610050979A /* FooterCVC.swift in Sources */,
+				1D79DBFB2A1E7FB900FAE8E4 /* MovieChartV.swift in Sources */,
+				1DA6C6932A1FEF6700683769 /* CollectionViewController.swift in Sources */,
+				1D5962752A18991E0050979A /* EventCVC.swift in Sources */,
 				36DAE0B72A1FC0B60028D478 /* PosterCVC.swift in Sources */,
 				36DAE0DB2A1FCC9C0028D478 /* Constants.swift in Sources */,
 				36A6D31C2A16CCD900D71840 /* TimeCVC.swift in Sources */,
@@ -728,12 +802,14 @@
 				36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */,
 				36DAE0E22A1FD2110028D478 /* TheaterSelectNavigationView.swift in Sources */,
 				36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */,
+				1D5962732A1899160050979A /* MovieChartCVC.swift in Sources */,
 				369E1B852A1643F900E46841 /* TheaterUnitCVC.swift in Sources */,
 				36DAE0C22A1FC11F0028D478 /* MovieInfoDataModel.swift in Sources */,
 				36115F9C2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift in Sources */,
 				36A6D3422A189E5000D71840 /* DataModel.swift in Sources */,
 				36DAE0B12A1FC0B60028D478 /* ActorCVC.swift in Sources */,
 				1D8DAAF82A0F812600674FAC /* UIColor+.swift in Sources */,
+				1D5962772A18992A0050979A /* MovieFeedCVC.swift in Sources */,
 				369E1B832A16419600E46841 /* CollectionViewCellReuseProtocol.swift in Sources */,
 				36DAE0CD2A1FCA8D0028D478 /* MovieInfoService.swift in Sources */,
 				36A6D3182A16B6D300D71840 /* LineFooterView.swift in Sources */,
