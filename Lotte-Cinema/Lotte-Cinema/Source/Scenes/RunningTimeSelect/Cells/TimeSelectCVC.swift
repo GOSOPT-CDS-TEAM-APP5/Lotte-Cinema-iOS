@@ -16,6 +16,7 @@ class TimeSelectCVC: UICollectionViewCell {
     var theaterInfo: [TheaterResponse]?{
         didSet{
             self.theaterLabel.text = theaterInfo?[index].theaterName
+            collectionView.reloadData()
         }
     }
     var cinemaList: [MultiplexList] = [] {

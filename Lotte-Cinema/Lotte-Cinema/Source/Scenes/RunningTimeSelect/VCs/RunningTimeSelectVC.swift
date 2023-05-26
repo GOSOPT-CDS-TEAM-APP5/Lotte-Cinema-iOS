@@ -17,12 +17,15 @@ final class RunningTimeSelectVC : UIViewController {
     //MARK: Property
     let baseURL = Config.baseURL
     let theaterString: [String] = ["홍대입구","브로드웨이(신사)","서울대입구서울대입구역샤로수길"]
+    private var selectedDateIndex: Int = 1
     var dateIndex = 0
     let date = [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
     let weekday: [String] = ["일","월","화","수","목","금","토","일","월","화","수","목","금","토"]
     
     var multiplexList: [MultiplexList] = []
     var theaterList : Response?
+    
+    
     
     //MARK: UI Component
     private lazy var runningTimeSelectView = RunningTimeSelectView()
@@ -42,7 +45,6 @@ final class RunningTimeSelectVC : UIViewController {
     
     //MARK: Custom Method
     private func setdelegate() {
-        print("성공!✅✅✅✅✅✅✅")
         runningTimeSelectView.collectionView.dataSource = self
         runningTimeSelectView.collectionView.delegate = self
         runningTimeSelectView.collectionView.collectionViewLayout = runningTimeSelectView.createLayout()
@@ -65,8 +67,19 @@ final class RunningTimeSelectVC : UIViewController {
             self.theaterList = data
             self.runningTimeSelectView.theaterList = data
             self.setdelegate()
+            self.runningTimeSelectView.collectionView.reloadData()
             print(data)
         }
+    }
+    private func updateRunningTimeData(dateIndex: Int) {
+        guard let theaterList = theaterList else {
+            return
+        }
+        let selectedDate = date[dateIndex]
+        let dateString: String = selectedDate >= 10 ? String(selectedDate) : "0\(selectedDate)"
+        let dateParam = "2023-05-\(dateString)"
+        
+        getInfo(date: dateParam, movieId: 1, theaterIds: [13,9,10])
     }
 }
 
@@ -96,9 +109,16 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
             return cell
         case 1:
             let cell = DateSelectUnitCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureSelection(isSelected: false)
             cell.configure(
                 date: String(date[indexPath.item]),
                 weekDay: weekday[indexPath.item])
+            if indexPath.item == selectedDateIndex {
+                cell.configureSelection(isSelected: true)
+            } else {
+                cell.configureSelection(isSelected: false)
+            }
+            
             return cell
         case 2...(theaterList?.data.count)!+2:
             let cell = TimeSelectCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
@@ -143,9 +163,8 @@ extension RunningTimeSelectVC: UICollectionViewDelegate {
         if let selectedIndexPaths = collectionView.indexPathsForSelectedItems {
             for selectedIndexPath in selectedIndexPaths {
                 collectionView.deselectItem(at: selectedIndexPath, animated: false)
-                if let cell = collectionView.cellForItem(at: selectedIndexPath) as? DateSelectUnitCVC {
-                    cell.configureSelection(isSelected: false)
-                    self.dateIndex = indexPath.item
+                if let cell = collectionView.cellForItem(at: selectedIndexPath) as? DateSelectUnitCVC {                    cell.configureSelection(isSelected: false)
+                    
                 }
             }
         }
@@ -155,8 +174,15 @@ extension RunningTimeSelectVC: UICollectionViewDelegate {
             cell.configureSelection(isSelected: true)
         }
         
+        // 첫 번째 섹션의 셀만 선택하도록 수정
+        if indexPath.section == 1 {
+            selectedDateIndex = indexPath.item
+            updateRunningTimeData(dateIndex: selectedDateIndex)
+        }
+        collectionView.reloadData()
         return true
     }
 }
+
 
 
