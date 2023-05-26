@@ -71,7 +71,7 @@ class MovieAudienceInfoView: UIView {
     private func setAudienceRatingLabelConfig(_ audienceRating: Double) {
         //관람객 평점
         audienceRatingAttachImg.do {
-            $0.image = ImageLiterals.icStar
+            $0.image = ImageLiterals.iconStar
         }
         audienceRatingLabel.do{
             let firstString = "관람객 평점".setAttributeString(range: .init(location: 0, length: "관람객 평점".count),

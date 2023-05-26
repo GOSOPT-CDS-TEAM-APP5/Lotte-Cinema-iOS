@@ -41,10 +41,10 @@ class FloatingButtton: UIButton {
     }
     
     private let shareImageButton = UIButton().then {
-        $0.setImage(ImageLiterals.icShare, for: .normal)
+        $0.setImage(ImageLiterals.ic_share, for: .normal)
     }
     private let likeButton = UIButton().then {
-        $0.setImage(ImageLiterals.icUnFillHeart, for: .normal)
+        $0.setImage(ImageLiterals.iconUnFillHeart, for: .normal)
     }
     private let textLabel = UILabel().then {
         $0.text = "예매하기"

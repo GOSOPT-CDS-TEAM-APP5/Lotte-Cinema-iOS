@@ -29,6 +29,7 @@ enum ImageLiterals {
     static var icCineFamily: UIImage { .load(name: "icCineFamily")}
     static var icExpand: UIImage { .load(name: "icExpand") }
     static var icon_white_back: UIImage { .load(name: "icon_white_back") }
+    static var ic_share: UIImage { .load(name: "ic_share")}
     
     static var img1: UIImage { .load(name: "Img1") }
     static var img2: UIImage { .load(name: "Img2") }
