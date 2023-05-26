@@ -1,10 +1,3 @@
-//
-//  TabbarVCViewController.swift
-//  ChaRo-iOS
-//
-//  Created by 장혜령 on 2021/07/02.
-//
-
 import UIKit
 
 
@@ -18,31 +11,22 @@ class TabbarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTabbar()
-        setBackgroundClear()
+        self.setBackgroundColor()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         selectedViewController = tabs[comeBackIndex]
     }
-    func setBackgroundClear() {
-        tabBar.isTranslucent = true
-        tabBar.backgroundImage = UIImage()
-        tabBar.shadowImage = UIImage()
+    func setBackgroundColor() {
+        tabBar.isTranslucent = false
+        self.view.backgroundColor = .white
     }
     
-    func setRadius() {
-        tabBar.backgroundColor = .white
-        tabBar.layer.cornerRadius = 15
-        tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        tabBar.clipsToBounds = false
-    }
     
     override func viewDidLayoutSubviews() {
         let tabbarY = UIScreen.main.bounds.height
         let tabbarX = UIScreen.main.bounds.width
         var tabbarHeight = 86.0
-        setRadius()
-        setShadow()
         let frame = CGRect(x: 0,
                                   y: tabbarY - tabbarHeight,
                                   width: tabbarX,
@@ -50,52 +34,44 @@ class TabbarVC: UITabBarController {
         self.tabBar.frame = frame
     }
     
-    internal override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.title == "작성하기" {
-            let createStoryboard = UIStoryboard(name: "CreatePost", bundle: nil)
-
-            let createVC = createStoryboard.instantiateViewController(identifier: CreatePostVC.className)
-            let createTab = UINavigationController(rootViewController: createVC)
-            
-            createTab.modalPresentationStyle = .fullScreen
-            self.present(createTab, animated: false, completion: nil)
-        } else if item.title == "나의 차로" {
-            comeBackIndex = 2
-        } else {
-            comeBackIndex = 0
-        }
-        print("comeBackIndex = \(comeBackIndex)")
-        
-    }
-    
-    
     private func configTabbar() {
-        self.view.tintColor = .mainBlue
+        self.view.tintColor = .black
         self.view.backgroundColor = UIColor.white
 
-        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let homeVC = homeStoryboard.instantiateViewController(identifier: "HomeVC")
+        let homeVC = ViewController()
         let homeTab = UINavigationController(rootViewController: homeVC)
-        homeTab.tabBarItem = UITabBarItem(title: "구경하기", image: UIImage(named: "tabbarIcHomeInactive"), selectedImage: UIImage(named: "tabbarIcHomeActive"))
+        homeTab.tabBarItem = UITabBarItem(title: "바로팝콘", image: ImageLiterals.iconPopcorn,
+                                          selectedImage: ImageLiterals.iconPopcorn)
         
         
-        let createStoryboard = UIStoryboard(name: "CreatePost", bundle: nil)
-
-        let createVC = createStoryboard.instantiateViewController(identifier: CreatePostVC.className)
-        let createTab = UINavigationController(rootViewController: createVC)
-        
-        createTab.tabBarItem = UITabBarItem(title: "작성하기", image: UIImage(named: "tabbarIcPostWrite"), selectedImage: UIImage(named: "tabbarIcPostWrite"))
-        createTab.tabBarItem.imageInsets = UIEdgeInsets(top: -13, left: 0, bottom: 5, right: 0)
+        let eventVC = EventVC()
+        let eventTab = UINavigationController(rootViewController: eventVC)
+        eventTab.tabBarItem = UITabBarItem(title: "이벤트", image: ImageLiterals.iconEvent,
+                                            selectedImage: ImageLiterals.iconEvent)
         
         
-        let myPageStoryboard = UIStoryboard(name: "MyPage", bundle: nil)
-        let myPageVC = myPageStoryboard.instantiateViewController(identifier: "MyPageVC")
+        let ticketingVC = TicketingVC()
+        let ticketingTab = UINavigationController(rootViewController: ticketingVC)
+        ticketingTab.tabBarItem = UITabBarItem(title: "바로 예매",
+                                            image: ImageLiterals.iconTicket,
+                                            selectedImage: ImageLiterals.iconTicket)
+        ticketingTab.tabBarItem.imageInsets = UIEdgeInsets(top: -13, left: 0, bottom: 5, right: 0)
+        
+        let myPageVC = MyPageVC()
         let myPageTab = UINavigationController(rootViewController: myPageVC)
-        myPageTab.navigationBar.isHidden = true
-        myPageTab.tabBarItem = UITabBarItem(title: "나의 차로", image: UIImage(named: "tabbarIcMypageInactive"), selectedImage: UIImage(named: "tabbarIcMypageActive"))
+        myPageTab.tabBarItem = UITabBarItem(title: "마이",
+                                            image: ImageLiterals.iconMypage,
+                                            selectedImage: ImageLiterals.iconMypage)
         
         
-        tabs = [homeTab,createTab, myPageTab]
+        let menuVC = MyPageVC()
+        let menuTab = UINavigationController(rootViewController: menuVC)
+        menuTab.tabBarItem = UITabBarItem(title: "메뉴",
+                                            image: ImageLiterals.iconMenu,
+                                            selectedImage: ImageLiterals.iconMenu)
+        
+        
+        tabs = [homeTab, eventTab, ticketingTab, myPageTab, menuTab]
         setViewControllers(tabs, animated: true)
         selectedViewController = homeTab
     }
