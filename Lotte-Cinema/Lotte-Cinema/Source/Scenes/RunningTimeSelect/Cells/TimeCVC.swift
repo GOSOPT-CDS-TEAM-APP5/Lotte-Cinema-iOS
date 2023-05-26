@@ -92,9 +92,9 @@ class TimeCVC: UICollectionViewCell {
     
     func configure(startTime: String, endTime: String, valid: String, book: String ) {
         startTimeLabel.text = startTime
-        endTimeLabel.text! += endTime
+        endTimeLabel.text = "~\(endTime)"
         validSeatLabel.text = valid
-        bookSeatLabel.text! += book
+        bookSeatLabel.text = "/\(book)"
     }
 }
 
