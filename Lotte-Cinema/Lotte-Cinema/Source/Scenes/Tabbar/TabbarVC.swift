@@ -12,6 +12,7 @@ class TabbarVC: UITabBarController {
         super.viewDidLoad()
         configTabbar()
         self.setBackgroundColor()
+        self.navigationController?.isNavigationBarHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

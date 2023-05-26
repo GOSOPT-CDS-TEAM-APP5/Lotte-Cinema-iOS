@@ -249,6 +249,7 @@ class MovieInfoVC: UIViewController {
                 return
             }
             self.movieInfoData = data.data
+            self.navigationView.titleLabel.text = data.data.movieName
             self.collectionView.reloadData()
         }
     }

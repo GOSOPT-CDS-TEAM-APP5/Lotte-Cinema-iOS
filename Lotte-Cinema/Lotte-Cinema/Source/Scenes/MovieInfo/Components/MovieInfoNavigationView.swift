@@ -36,7 +36,7 @@ class MovieInfoNavigationView: UIView {
     }
     
     
-    private let titleLabel = UILabel().then {
+    internal let titleLabel = UILabel().then {
         $0.font = .NotoSansMedium(ofSize: 14)
         $0.textColor = .white
         $0.text = "가디언즈 오브 갤럭시: Volume3"
