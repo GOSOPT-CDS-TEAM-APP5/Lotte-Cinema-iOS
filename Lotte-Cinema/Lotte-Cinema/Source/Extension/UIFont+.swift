@@ -6,7 +6,7 @@ extension UIFont {
         return UIFont(name: "NotoSansKR-Black", size: size)!
     }
     static func NotoSansBold(ofSize size: CGFloat) -> UIFont{
-        return UIFont(name: "NotoSansKR-Bold", size: size)!
+        return UIFont(name: "NotoSansKR-Bold", size: size) ?? UIFont()
     }
     static func NotoSansLight(ofSize size: CGFloat) -> UIFont{
         return UIFont(name: "NotoSansKR-Light", size: size)!

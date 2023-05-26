@@ -17,4 +17,8 @@ enum ImageLiterals {
     static var iconPopcorn: UIImage { .load(name: "icon_popcorn") }
     static var iconTicket: UIImage { .load(name: "icon_ticket") }
     
+    static var img1: UIImage { .load(name: "Img1") }
+    static var img2: UIImage { .load(name: "Img2") }
+    static var img3: UIImage { .load(name: "Img3") }
+    static var img4: UIImage { .load(name: "Img4") }
 }

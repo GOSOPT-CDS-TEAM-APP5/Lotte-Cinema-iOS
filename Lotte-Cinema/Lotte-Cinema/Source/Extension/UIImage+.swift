@@ -3,6 +3,7 @@ import UIKit.UIImage
 extension UIImage {
     
     static var photo_1: UIImage { UIImage(named: "AppIcon")! }
+    static var logophoto: UIImage { UIImage(named: "logo_photo") ?? UIImage() }
     static var photo_2: UIImage { UIImage(named: "car_banner")! }
     static var moviefeed3: UIImage { UIImage(named: "comeout_photo")! }
     static var moviefeed6: UIImage { UIImage(named: "crycry_poster")! }
@@ -44,8 +45,12 @@ extension UIImage {
     static var moviechart3: UIImage { UIImage(named: "streamer_poster")! }
     static var moviefeed5: UIImage { UIImage(named: "streamer_small_poster")! }
     static var eventPhoto3: UIImage { UIImage(named: "super_mario")! }
-    
-    
+    static var img1: UIImage { UIImage(named: "Img1")! }
+    static var img2: UIImage { UIImage(named: "Img2")! }
+    static var img3: UIImage { UIImage(named: "Img3")! }
+    static var img4: UIImage { UIImage(named: "Img4")! }
+    static var longImg: UIImage { UIImage(named: "longImg")! }
+    //moviewchart3, moviechart_4, moviefeed6
     
     static func load(name: String) -> UIImage {
         guard let image = UIImage(named: name, in: nil, compatibleWith: nil) else {

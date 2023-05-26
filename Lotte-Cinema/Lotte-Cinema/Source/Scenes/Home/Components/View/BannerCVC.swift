@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 
-final class Banner: UICollectionViewCell {
+final class BannerCVC: UICollectionViewCell {
     
     private let BannerimageView = UIImageView().then {
         $0.image = .headerPoster
@@ -21,9 +21,13 @@ final class Banner: UICollectionViewCell {
         setLayout()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setLayout(){
         self.addSubview(BannerimageView)
-        imageView.snp.makeConstraints {
+        BannerimageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
