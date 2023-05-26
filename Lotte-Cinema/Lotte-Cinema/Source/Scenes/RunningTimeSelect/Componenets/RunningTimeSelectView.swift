@@ -10,14 +10,14 @@ import SnapKit
 
 final class RunningTimeSelectView: UIView {
     
-    lazy var theaterList : [TheaterResponse] = []
+    lazy var theaterList : Response = Response(code: 0, message: "", data: [])
     
     //MARK: UIComponents
     private let navigationView = NavigationView()
     let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
     
     
-    lazy var collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: createLayout()).then {
+    lazy var collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: UICollectionViewLayout()).then {
         $0.register(MovieHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MovieHeaderView.identifier)
         $0.register(LineFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: LineFooterView.identifier)
         $0.register(TheaterSelectButtonView.self, forSupplementaryViewOfKind: "TheaterSelButton", withReuseIdentifier: "TheaterSelButton")
@@ -79,7 +79,7 @@ final class RunningTimeSelectView: UIView {
 //MARK: extension - layout
 extension RunningTimeSelectView {
     
-    private func createLayout() -> UICollectionViewLayout {
+    func createLayout() -> UICollectionViewLayout {
         
         let layout = UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ -> NSCollectionLayoutSection? in
             guard self != nil else { return nil }
@@ -175,15 +175,14 @@ extension RunningTimeSelectView {
                 section.boundarySupplementaryItems = [footer]
                 
             default : // timeSelect section
-                
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .estimated(CGFloat(max(140 * self!.theaterList[sectionIndex-2].multiplexList.count, 0)))
+                    heightDimension: .estimated(CGFloat(max(140 * ((self?.theaterList.data[sectionIndex-2].multiplexList.count ?? 0)),0)))
                 )
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, repeatingSubitem: item, count: 1)
                 
-                var footerSize = NSCollectionLayoutSize(
+                let footerSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1.0),
                     heightDimension: .absolute(4.0)
                 )

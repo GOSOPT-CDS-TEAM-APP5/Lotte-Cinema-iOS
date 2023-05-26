@@ -11,10 +11,11 @@ import Then
 
 class TimeSelectCVC: UICollectionViewCell {
     
+    var index = 0
     //MARK: Property
-    lazy var theaterInfo: TheaterResponse = TheaterResponse(theaterName: "", multiplexList: cinemaList) {
-        didSet {
-            self.theaterLabel.text = theaterInfo.theaterName
+    var theaterInfo: [TheaterResponse]?{
+        didSet{
+            self.theaterLabel.text = theaterInfo?[index].theaterName
         }
     }
     var cinemaList: [MultiplexList] = [] {
@@ -67,7 +68,6 @@ class TimeSelectCVC: UICollectionViewCell {
     }
     
     private func setViewHierarchy() {
-        theaterLabel.text = theaterInfo.theaterName
         contentView.addSubviews(titleStackView,collectionView)
     }
     
@@ -87,19 +87,19 @@ class TimeSelectCVC: UICollectionViewCell {
 //MARK: extension - DataSource
 extension TimeSelectCVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return cinemaList.count
+        return theaterInfo?[index].multiplexList.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cinemaList[section].scheduleList.count
+        return theaterInfo?[index].multiplexList[section].scheduleList.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = TimeCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-        cell.configure(startTime: cinemaList[indexPath.section].scheduleList[indexPath.row].startTime,
-                       endTime: cinemaList[indexPath.section].scheduleList[indexPath.row].endTime,
-                       valid: cinemaList[indexPath.section].scheduleList[indexPath.row].currentPeople,
-                       book: cinemaList[indexPath.section].scheduleList[indexPath.row].maxPeople)
+        cell.configure(startTime: theaterInfo?[index].multiplexList[indexPath.section].scheduleList[indexPath.item].startTime ?? "",
+                       endTime: theaterInfo?[index].multiplexList[indexPath.section].scheduleList[indexPath.item].endTime ?? "",
+                       valid: theaterInfo?[index].multiplexList[indexPath.section].scheduleList[indexPath.item].currentPeople ?? "",
+                       book: theaterInfo?[index].multiplexList[indexPath.section].scheduleList[indexPath.item].maxPeople ?? "")
         return cell
     }
     
@@ -111,7 +111,7 @@ extension TimeSelectCVC: UICollectionViewDataSource {
         ) as? TheaterHeaderView else {
             return UICollectionReusableView()
         }
-        header.configureCell(movieType: theaterInfo.multiplexList[indexPath.section].movieType, theater:theaterInfo.multiplexList[indexPath.section].multiplexLocation)
+        header.configureCell(movieType: (theaterInfo?[index].multiplexList[indexPath.section].movieType)!, theater: (theaterInfo?[index].multiplexList[indexPath.section].multiplexLocation)!)
         return header
     }
 }
@@ -145,10 +145,13 @@ extension TimeSelectCVC {
             item.edgeSpacing = NSCollectionLayoutEdgeSpacing(leading: .fixed(8), top: .fixed(21), trailing: nil, bottom: .fixed(21))
             
             let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
+                widthDimension: .estimated(120),
                 heightDimension: .estimated(90)
             )
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3)
+            
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            
+            group.contentInsets = .init(top: 16, leading: 8, bottom: 16, trailing: 8)
             
             
             section = NSCollectionLayoutSection(group: group)
