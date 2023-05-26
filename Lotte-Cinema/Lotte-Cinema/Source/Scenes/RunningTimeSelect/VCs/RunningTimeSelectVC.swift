@@ -18,24 +18,27 @@ final class RunningTimeSelectVC : UIViewController {
     let baseURL = Config.baseURL
     let theaterString: [String] = ["홍대입구","브로드웨이(신사)","서울대입구서울대입구역샤로수길"]
     private var selectedDateIndex: Int = 1
-    var dateIndex = 0
+    
     let date = [7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
     let weekday: [String] = ["일","월","화","수","목","금","토","일","월","화","수","목","금","토"]
     
-    var multiplexList: [MultiplexList] = []
-    var theaterList : Response?
-    
+    var selectedTheaterList: [TheaterListData]?
+    var theaterResponse : Response?
+    var selectedTheaterIDs: [Int] = []
     
     
     //MARK: UI Component
-    private lazy var runningTimeSelectView = RunningTimeSelectView()
+    private let runningTimeSelectView = RunningTimeSelectView()
     
     //MARK: LifeCycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        getInfo(date: "2023-05-08", movieId: 1, theaterIds: [13,9,10])
+        guard let selectedTheaterList = selectedTheaterList else { return }
+        getInfo(date: "2023-05-08", movieId: 1, theaterInfo: selectedTheaterList)
         setLayout()
     }
+    
+    //MARK: Custom Method
     func setLayout(){
         view.addSubview(runningTimeSelectView)
         runningTimeSelectView.snp.makeConstraints {
@@ -43,20 +46,34 @@ final class RunningTimeSelectVC : UIViewController {
         }
     }
     
-    //MARK: Custom Method
     private func setdelegate() {
         runningTimeSelectView.collectionView.dataSource = self
         runningTimeSelectView.collectionView.delegate = self
         runningTimeSelectView.collectionView.collectionViewLayout = runningTimeSelectView.createLayout()
     }
     
-    private func getInfo(date: String, movieId: Int, theaterIds: [Int]) {
+    private func setAction() {
+        runningTimeSelectView.navigationView.backButton.addTarget(self, action: #selector(didTapBackButton), for: .touchUpInside)
+    }
+    
+    private func getInfo(date: String, movieId: Int, theaterInfo: [TheaterListData]) {
         let url = "\(baseURL)schedule?date=\(date)&movieId=\(movieId)"
-        print(url)
+        
+        if !(selectedTheaterIDs.isEmpty) {
+            selectedTheaterIDs.removeAll()
+        }
+        
+        for i in theaterInfo {
+            selectedTheaterIDs.append(i.theaterID)
+        }
+        
         var theaterIdParameters = ""
-        for theaterId in theaterIds {
+        for theaterId in selectedTheaterIDs {
             theaterIdParameters += "&theaterId=\(theaterId)"
         }
+        
+        
+        
         GetService.shared.getService(from: url+theaterIdParameters,
                                      isTokenUse: false) {
             (data: Response?, error) in
@@ -64,7 +81,7 @@ final class RunningTimeSelectVC : UIViewController {
                 print("error: \(String(describing: error?.debugDescription))")
                 return
             }
-            self.theaterList = data
+            self.theaterResponse = data
             self.runningTimeSelectView.theaterList = data
             self.setdelegate()
             self.runningTimeSelectView.collectionView.reloadData()
@@ -72,14 +89,19 @@ final class RunningTimeSelectVC : UIViewController {
         }
     }
     private func updateRunningTimeData(dateIndex: Int) {
-        guard let theaterList = theaterList else {
+        guard let theaterList = theaterResponse, let selectedTheaterList = selectedTheaterList else {
             return
         }
         let selectedDate = date[dateIndex]
         let dateString: String = selectedDate >= 10 ? String(selectedDate) : "0\(selectedDate)"
         let dateParam = "2023-05-\(dateString)"
         
-        getInfo(date: dateParam, movieId: 1, theaterIds: [13,9,10])
+        getInfo(date: dateParam, movieId: 1, theaterInfo: selectedTheaterList)
+    }
+    
+    //MARK: Action
+    @objc func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -87,13 +109,13 @@ final class RunningTimeSelectVC : UIViewController {
 extension RunningTimeSelectVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return (theaterList?.data.count ?? 0) + 2
+        return (theaterResponse?.data.count ?? 0) + 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return theaterList?.data.count ?? 0
+            return theaterResponse?.data.count ?? 0
         case 1:
             return weekday.count
         default:
@@ -105,7 +127,7 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
         switch indexPath.section{
         case 0:
             let cell = TheaterUnitCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configure(name: theaterList?.data[indexPath.item].theaterName)
+            cell.configure(name: theaterResponse?.data[indexPath.item].theaterName)
             return cell
         case 1:
             let cell = DateSelectUnitCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
@@ -120,10 +142,10 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
             }
             
             return cell
-        case 2...(theaterList?.data.count)!+2:
+        case 2...(theaterResponse?.data.count)!+2:
             let cell = TimeSelectCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.index = indexPath.section - 2
-            cell.theaterInfo = theaterList?.data
+            cell.theaterInfo = theaterResponse?.data
             return cell
         default:
             return UICollectionViewCell()

@@ -13,7 +13,7 @@ final class RunningTimeSelectView: UIView {
     lazy var theaterList : Response = Response(code: 0, message: "", data: [])
     
     //MARK: UIComponents
-    private let navigationView = NavigationView()
+    let navigationView = NavigationView()
     let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
     
     

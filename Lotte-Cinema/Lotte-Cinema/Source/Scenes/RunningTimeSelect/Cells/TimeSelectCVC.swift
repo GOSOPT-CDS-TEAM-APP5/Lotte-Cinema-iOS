@@ -11,8 +11,8 @@ import Then
 
 class TimeSelectCVC: UICollectionViewCell {
     
-    var index = 0
     //MARK: Property
+    var index = 0
     var theaterInfo: [TheaterResponse]?{
         didSet{
             self.theaterLabel.text = theaterInfo?[index].theaterName
