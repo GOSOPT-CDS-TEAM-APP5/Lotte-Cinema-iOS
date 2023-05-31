@@ -39,7 +39,7 @@ class TabbarVC: UITabBarController {
         self.view.tintColor = .black
         self.view.backgroundColor = UIColor.white
 
-        let homeVC = ViewController()
+        let homeVC = CollectionViewController() //ViewController() 기존에 이거였음
         let homeTab = UINavigationController(rootViewController: homeVC)
         homeTab.tabBarItem = UITabBarItem(title: "바로팝콘", image: ImageLiterals.iconPopcorn,
                                           selectedImage: ImageLiterals.iconPopcorn)
