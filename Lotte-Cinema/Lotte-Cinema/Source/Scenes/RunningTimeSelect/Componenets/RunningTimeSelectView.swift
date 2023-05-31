@@ -15,6 +15,7 @@ final class RunningTimeSelectView: UIView {
     //MARK: UIComponents
     let navigationView = NavigationView()
     let buttonView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+    var isEmptyView = false
     
     
     lazy var collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: UICollectionViewLayout()).then {
@@ -24,6 +25,7 @@ final class RunningTimeSelectView: UIView {
         TheaterUnitCVC.register(collectionView: $0)
         DateSelectUnitCVC.register(collectionView: $0)
         TimeSelectCVC.register(collectionView: $0)
+        EmptyCVC.register(collectionView: $0)
         $0.allowsMultipleSelection = false
         
     }
@@ -133,13 +135,13 @@ extension RunningTimeSelectView {
                 
                 
                 let buttonSize = NSCollectionLayoutSize(widthDimension: .absolute(100), heightDimension: .absolute(50))
-                  let button = NSCollectionLayoutBoundarySupplementaryItem(
+                let button = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: buttonSize,
                     elementKind: "TheaterSelButton",
                     alignment: .trailing
-                  )
-                  
-                  section.boundarySupplementaryItems = [header, footer, button]
+                )
+                
+                section.boundarySupplementaryItems = [header, footer, button]
                 
                 
                 
@@ -175,26 +177,37 @@ extension RunningTimeSelectView {
                 section.boundarySupplementaryItems = [footer]
                 
             default : // timeSelect section
-                let itemSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1),
-                    heightDimension: .estimated(CGFloat(max(140 * ((self?.theaterList.data[sectionIndex-2].multiplexList.count ?? 0)),0)))
-                )
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, repeatingSubitem: item, count: 1)
-                
-                let footerSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .absolute(4.0)
-                )
-                let footer = NSCollectionLayoutBoundarySupplementaryItem(
-                    layoutSize: footerSize,
-                    elementKind: UICollectionView.elementKindSectionFooter,
-                    alignment: .bottom
-                )
-                
-                section = NSCollectionLayoutSection(group: group)
-                section.boundarySupplementaryItems = [footer]
-                
+                if self!.isEmptyView { //영화 시간이 없는 경우
+                    let itemSize = NSCollectionLayoutSize(
+                        widthDimension: .fractionalWidth(1),
+                        heightDimension: .fractionalHeight(0.8)
+                    )
+                    let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                    let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, repeatingSubitem: item, count: 1)
+                    
+                    section = NSCollectionLayoutSection(group: group)
+                } else {
+                    let itemSize = NSCollectionLayoutSize(
+                        widthDimension: .fractionalWidth(1),
+                        heightDimension: .estimated(CGFloat(max(140 * ((self?.theaterList.data[sectionIndex-2].multiplexList.count ?? 0)),0)))
+                    )
+                    let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                    let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, repeatingSubitem: item, count: 1)
+                    
+                    let footerSize = NSCollectionLayoutSize(
+                        widthDimension: .fractionalWidth(1.0),
+                        heightDimension: .absolute(4.0)
+                    )
+                    let footer = NSCollectionLayoutBoundarySupplementaryItem(
+                        layoutSize: footerSize,
+                        elementKind: UICollectionView.elementKindSectionFooter,
+                        alignment: .bottom
+                    )
+                    
+                    section = NSCollectionLayoutSection(group: group)
+                    section.boundarySupplementaryItems = [footer]
+                    
+                }
             }
             
             return section

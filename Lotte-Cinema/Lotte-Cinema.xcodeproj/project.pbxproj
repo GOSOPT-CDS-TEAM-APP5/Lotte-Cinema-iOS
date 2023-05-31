@@ -53,6 +53,7 @@
 		36115F9C2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36115F9B2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift */; };
 		362D08352A1D37E5002A8076 /* TheaterSelectButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */; };
 		362D08482A1F4C2C002A8076 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08462A1F4C2C002A8076 /* Config.swift */; };
+		367D24B72A27B8D1001B144C /* EmptyCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D24B62A27B8D1001B144C /* EmptyCVC.swift */; };
 		369E1B732A163FB300E46841 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 369E1B722A163FB300E46841 /* SnapKit */; };
 		369E1B762A163FBB00E46841 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 369E1B752A163FBB00E46841 /* Then */; };
 		369E1B792A163FC200E46841 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 369E1B782A163FC200E46841 /* Alamofire */; };
@@ -162,6 +163,7 @@
 		36115F9B2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellReuseProtocol.swift; sourceTree = "<group>"; };
 		362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectButtonView.swift; sourceTree = "<group>"; };
 		362D08462A1F4C2C002A8076 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		367D24B62A27B8D1001B144C /* EmptyCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCVC.swift; sourceTree = "<group>"; };
 		369E1B532A156AC100E46841 /* TheaterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectView.swift; sourceTree = "<group>"; };
 		369E1B552A15F8BB00E46841 /* TheaterSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectVC.swift; sourceTree = "<group>"; };
 		369E1B7A2A1640D400E46841 /* RunningTimeSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimeSelectVC.swift; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 				36A6D3172A16B6D300D71840 /* LineFooterView.swift */,
 				36A6D3432A18D40100D71840 /* TheaterHeaderView.swift */,
 				362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */,
+				367D24B62A27B8D1001B144C /* EmptyCVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */,
 				36DAE0F12A1FDAC00028D478 /* TheaterListDataModel.swift in Sources */,
 				369E1B7D2A1640FA00E46841 /* RunningTimeSelectView.swift in Sources */,
+				367D24B72A27B8D1001B144C /* EmptyCVC.swift in Sources */,
 				36DAE0BD2A1FC0B60028D478 /* CinemaChipView.swift in Sources */,
 				36DAE0BB2A1FC0B60028D478 /* MovieInfoNavigationView.swift in Sources */,
 				36DAE0B92A1FC0B60028D478 /* InfoCollectionViewHeader.swift in Sources */,
