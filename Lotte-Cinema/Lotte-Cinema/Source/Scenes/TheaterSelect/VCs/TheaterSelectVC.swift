@@ -129,9 +129,6 @@ final class TheaterSelectVC: UIViewController {
         let nextVC = RunningTimeSelectVC()
         nextVC.selectedTheaterList = selectedTheater
         navigationController?.pushViewController(nextVC, animated: true)
-        //여기서 선택된 항목 넘ㄱ며주면 되는데.. 위의 배열보면 어떤값 넘겨야 되는지 알 수 있어
-        //selectedTheater 배열이 선택된 영화관 값이야!!
-        //이걸루 푸쉬해서 넘겨준다음 서버 붙히면 될듯!!
     }
     private let collectionViewPlaceholderView = UILabel().then {
         $0.text = "최대 3개까지 선택할 수 있습니다."
