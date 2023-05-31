@@ -36,6 +36,7 @@ final class RunningTimeSelectVC : UIViewController {
         guard let selectedTheaterList = selectedTheaterList else { return }
         getInfo(date: "2023-05-08", movieId: 1, theaterInfo: selectedTheaterList)
         setLayout()
+        setAction()
     }
     
     //MARK: Custom Method
