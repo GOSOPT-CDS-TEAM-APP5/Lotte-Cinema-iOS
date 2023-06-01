@@ -189,7 +189,7 @@ extension RunningTimeSelectView {
                 } else {
                     let itemSize = NSCollectionLayoutSize(
                         widthDimension: .fractionalWidth(1),
-                        heightDimension: .estimated(CGFloat(max(140 * ((self?.theaterList.data[sectionIndex-2].multiplexList.count ?? 0)),0)))
+                        heightDimension: .estimated(CGFloat(max(140 * ((self?.theaterList.data[sectionIndex-2].multiplexList.count ?? 0)),1)))
                     )
                     let item = NSCollectionLayoutItem(layoutSize: itemSize)
                     let group = NSCollectionLayoutGroup.horizontal(layoutSize: itemSize, repeatingSubitem: item, count: 1)
