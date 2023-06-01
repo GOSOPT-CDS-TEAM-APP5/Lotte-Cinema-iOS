@@ -104,6 +104,7 @@ final class RunningTimeSelectVC : UIViewController {
                     }
                 }
             }
+            self.runningTimeSelectView.isEmptyView = self.emptyDateCount < 3 ? false : true
             self.runningTimeSelectView.collectionView.reloadData()
             print(data)
         }
@@ -133,7 +134,7 @@ final class RunningTimeSelectVC : UIViewController {
 extension RunningTimeSelectVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if emptyDateCount >= 0 { return 3 }
+        if emptyDateCount > 3 { return 3 }
         return (theaterResponse?.data.count ?? 0) + 2
     }
     
@@ -168,14 +169,13 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
             
             return cell
         case 2...(theaterResponse?.data.count)!+2:
-            if emptyDateCount < 0  {
+            if emptyDateCount < 3  {
                 let cell = TimeSelectCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
                 cell.index = indexPath.section - 2
                 cell.theaterInfo = theaterResponse?.data
                 return cell
             } else {
                 let cell = EmptyCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-                runningTimeSelectView.isEmptyView = true
                 return cell
             }
         default:
