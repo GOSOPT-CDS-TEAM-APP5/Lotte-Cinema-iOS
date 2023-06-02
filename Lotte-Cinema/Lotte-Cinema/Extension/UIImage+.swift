@@ -27,6 +27,7 @@ extension UIImage {
     static var icon_mypage: UIImage { UIImage(named: "icon_mypage")! }
     static var icon_popcorn: UIImage { UIImage(named: "icon_popcorn")! }
     static var icon_ticket: UIImage { UIImage(named: "icon_ticket")! }
+    static var iconEmpty: UIImage { UIImage(named: "ic_empty")!}
     static var moviechart_4: UIImage { UIImage(named: "im_moon_banner")! }
     static var moviefeed4: UIImage { UIImage(named: "im_moon_poster")! }
     static var eventPhoto4: UIImage { UIImage(named: "lotte_cinema_club")! }

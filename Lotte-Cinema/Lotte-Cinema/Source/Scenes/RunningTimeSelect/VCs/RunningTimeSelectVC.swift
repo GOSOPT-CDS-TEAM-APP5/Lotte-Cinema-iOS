@@ -26,11 +26,18 @@ final class RunningTimeSelectVC : UIViewController {
     var theaterResponse : Response?
     var selectedTheaterIDs: [Int] = []
     
+    var emptyDateCount = -1
+    
     
     //MARK: UI Component
     private let runningTimeSelectView = RunningTimeSelectView()
     
     //MARK: LifeCycles
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let selectedTheaterList = selectedTheaterList else { return }
@@ -85,6 +92,19 @@ final class RunningTimeSelectVC : UIViewController {
             self.theaterResponse = data
             self.runningTimeSelectView.theaterList = data
             self.setdelegate()
+            self.emptyDateCount = -1
+            for theater in data.data {
+                if theater.multiplexList.isEmpty {
+                    self.emptyDateCount += 1
+                }
+                for t in theater.multiplexList{
+                    if t.scheduleList.isEmpty {
+                        self.emptyDateCount += 1
+                        print(self.emptyDateCount)
+                    }
+                }
+            }
+            self.runningTimeSelectView.isEmptyView = self.emptyDateCount < 3 ? false : true
             self.runningTimeSelectView.collectionView.reloadData()
             print(data)
         }
@@ -104,6 +124,7 @@ final class RunningTimeSelectVC : UIViewController {
     @objc func didTapBackButton() {
         navigationController?.popViewController(animated: true)
     }
+    
     @objc func didTapSelectTheaterButton(){
         navigationController?.popViewController(animated: true)
     }
@@ -113,6 +134,7 @@ final class RunningTimeSelectVC : UIViewController {
 extension RunningTimeSelectVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if emptyDateCount > 3 { return 3 }
         return (theaterResponse?.data.count ?? 0) + 2
     }
     
@@ -147,10 +169,15 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
             
             return cell
         case 2...(theaterResponse?.data.count)!+2:
-            let cell = TimeSelectCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.index = indexPath.section - 2
-            cell.theaterInfo = theaterResponse?.data
-            return cell
+            if emptyDateCount < 3  {
+                let cell = TimeSelectCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+                cell.index = indexPath.section - 2
+                cell.theaterInfo = theaterResponse?.data
+                return cell
+            } else {
+                let cell = EmptyCVC.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+                return cell
+            }
         default:
             return UICollectionViewCell()
         }

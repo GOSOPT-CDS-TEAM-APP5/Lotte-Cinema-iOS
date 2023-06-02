@@ -166,6 +166,6 @@ extension TimeSelectCVC {
     }
 }
 
-extension TimeSelectCVC: CollectionViewCellReuseProtocol{
+extension TimeSelectCVC: CollectionViewCellReuseProtocol {
     
 }
