@@ -36,6 +36,7 @@ final class RunningTimeSelectVC : UIViewController {
         guard let selectedTheaterList = selectedTheaterList else { return }
         getInfo(date: "2023-05-08", movieId: 1, theaterInfo: selectedTheaterList)
         setLayout()
+        setAction()
     }
     
     //MARK: Custom Method
@@ -103,6 +104,9 @@ final class RunningTimeSelectVC : UIViewController {
     @objc func didTapBackButton() {
         navigationController?.popViewController(animated: true)
     }
+    @objc func didTapSelectTheaterButton(){
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 //MARK: extension - DataSource
@@ -164,7 +168,8 @@ extension RunningTimeSelectVC: UICollectionViewDataSource {
             return header
         } else if kind == "TheaterSelButton" {
             let buttonView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TheaterSelButton", for: indexPath) as! TheaterSelectButtonView
-            return buttonView} else {
+            buttonView.selectTheaterButton.addTarget(self, action: #selector(didTapSelectTheaterButton), for: .touchUpInside)
+            return buttonView } else {
                 // Dequeue reusable supplementary view for footer
                 guard let footer = collectionView.dequeueReusableSupplementaryView(
                     ofKind: kind,
