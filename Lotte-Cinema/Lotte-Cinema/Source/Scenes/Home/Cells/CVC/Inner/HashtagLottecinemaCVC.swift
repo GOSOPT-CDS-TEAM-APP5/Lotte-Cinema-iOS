@@ -4,53 +4,81 @@ import Then
 
 final class HashtagLottecinemaCVC: UICollectionViewCell {
     
-    static let identifier = "HashtagLottecinemaCVC"
+    static let identifier: String = "HashtagLottecinemaCVC"
     
-    //moviewchart3, moviechart_4, moviefeed6
-    private let photo1 = UIImageView().then {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setLayout()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imageView.image = nil
+        self.titleLabel1.text = "#롯데시네마"
+        self.titleLabel2.text = "Pick!"
+        self.titleLabel3.text = ""
+        self.titleLabel4.text = ""
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    internal func bindData(image: UIImage,
+                          title1: String,
+                           title2: String,
+                           title3: String,
+                           title4: String) {
+        self.imageView.image = image
+        self.titleLabel1.text = title1
+        self.titleLabel2.text = title2
+        self.titleLabel3.text = title3
+        self.titleLabel4.text = title4
+    }
+    
+    private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
     }
-    private let label1 = UILabel().then {
+    private let titleLabel1 = UILabel().then {
         $0.font = .NotoSansBold(ofSize: 14)
         $0.textColor = .black
     }
-    private let label2 = UILabel().then {
+    private let titleLabel2 = UILabel().then {
+        $0.font = .NotoSansMedium(ofSize: 14)
+        $0.textColor = .main_1
+    }
+    private let titleLabel3 = UILabel().then {
         $0.font = .NotoSansMedium(ofSize: 12)
         $0.textColor = .black
     }
-    private let label3 = UILabel().then {
+    private let titleLabel4 = UILabel().then {
         $0.font = .NotoSansMedium(ofSize: 10)
         $0.textColor = .g_200
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
     func setLayout() {
-        self.contentView.addSubviews(photo1,label1,label2,label3)
+        self.contentView.addSubviews(imageView,titleLabel1,titleLabel2,titleLabel3,titleLabel4)
         
-        self.label1.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
+        self.titleLabel1.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(16)
+            $0.leading.equalToSuperview().offset(16)
         }
-        self.photo1.snp.makeConstraints {
-            $0.top.equalTo(label1.snp.bottom).offset(12)
-            $0.leading.equalToSuperview()
+        self.titleLabel2.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(4)
+        }
+        self.imageView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel1.snp.bottom).offset(12)
+            $0.leading.equalToSuperview().offset(17)
+            $0.width.equalTo(137)
             $0.height.equalTo(106)
         }
-        self.label2.snp.makeConstraints {
-            $0.top.equalTo(photo1.snp.bottom).offset(12)
-            $0.leading.equalToSuperview()
+        self.titleLabel3.snp.makeConstraints {
+            $0.top.equalTo(imageView).offset(12)
+            $0.leading.equalToSuperview().offset(17)
         }
-        self.label3.snp.makeConstraints {
-            $0.top.equalTo(photo1.snp.bottom).offset(30)
-            $0.leading.equalToSuperview()
+        self.titleLabel4.snp.makeConstraints {
+            $0.top.equalTo(titleLabel3.snp.bottom)
+            $0.leading.equalToSuperview().offset(17)
         }
     }
 }

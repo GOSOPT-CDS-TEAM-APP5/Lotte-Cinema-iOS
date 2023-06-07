@@ -1,23 +1,41 @@
 //
-//  HomeView.swift
-//  iOS
+//  Footer.swift
+//  Lotte-Cinema
 //
-//  Created by 고영민 on 2023/05/21.
+//  Created by 고영민 on 2023/05/20.
 //
 
 import UIKit
 import SnapKit
 import Then
 
-final class BannerV : UIView {
-    //headerPoster, logophoto, iconTicket ,icon_popcorn
+class HomeCollectionViewFooter : UICollectionReusableView {
 
-    //MARK: - UI Components
-
-    private let squareView = UIView().then {
-        $0.backgroundColor = UIColor.white
+    //MARK: - Life Cycles
+    init() {
+        super.init(frame: .zero)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
 
+    //MARK: - UI Components
+    static let identifier: String = "HomeCollectionViewFooter"
+    
+    private let contentView = UIView().then {
+        $0.backgroundColor = .black
+    }
+
+    private let contentBackgroundView = UIView().then {
+        $0.backgroundColor = .white
+    }
+    
     private let posterImg = UIImageView().then {
         $0.image = .headerPoster
     }
@@ -42,44 +60,17 @@ final class BannerV : UIView {
         $0.image = .icon_popcorn
     }
 
-    //MARK: - Life Cycles
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        style()
-        hierarchy()
-        layout()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     //MARK: - Custom Method
-
-    private func style() {
-        self.backgroundColor = .white
-    }
-
-    private func hierarchy() {
-        self.addSubviews(
-            squareView
-        )
-        squareView.addSubviews(
-            posterImg, lotteImg, ticket_shake, ticketIcon, popcornIcon
-        )
-    }
-    //headerPoster, logophoto, iconTicket ,icon_popcorn
-
-    private func layout() {
-        squareView.snp.makeConstraints {
-            $0.width.equalTo(375)
-            $0.height.equalTo(251)
-            $0.centerX.centerY.equalToSuperview()
+    private func setLayout() {
+        self.addSubview(contentView)
+        contentView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
         }
+        contentView.addSubviews(posterImg,lotteImg,ticket_shake,ticketIcon,popcornIcon)
+        
+
         posterImg.snp.makeConstraints {
-            $0.width.height.equalTo(squareView)
+            $0.width.height.equalTo(contentView)
         }
 
         lotteImg.snp.makeConstraints {

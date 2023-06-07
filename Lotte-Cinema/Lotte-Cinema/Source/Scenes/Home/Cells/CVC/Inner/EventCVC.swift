@@ -1,34 +1,64 @@
-////
-////  Event.swift
-////  Lotte-Cinema
-////
-////  Created by 고영민 on 2023/05/20.
-////
-//
-//import UIKit
-//import SnapKit
-//import Then
-//
-//
-//final class Banner: UICollectionViewCell {
-//    
-//    private let imageView = UIImageView().then {
-//        $0.image = 
+import UIKit
+import SnapKit
+import Then
+//더미데이터 만들어야함.
+class EventCVC: UICollectionViewCell {
+    static let identifier: String = "EventCVC"
+    
+    private let imageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
+    }
+    private let titleLabel1 = UILabel().then {
+        $0.font = .NotoSansRegular(ofSize: 15)
+        $0.textColor = .black
+    }
+    private let titleLabel2 = UILabel().then {
+        $0.font = .NotoSansRegular(ofSize: 15)
+        $0.textColor = .black
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setLayout()
+    }
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        self.imageView.image = nil
+//        self.titleLabel.text = ""
 //    }
-//    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setLayout()
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+//    internal func bindData(image: UIImage,
+//                          title: String) {
+//        self.imageView.image = image
+//        self.titleLabel.text = title
 //    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    private func setLayout(){
-//        self.addSubview(imageView)
-//        imageView.snp.makeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
-//    }
-//}
+    
+    private func setLayout() {
+        self.contentView.backgroundColor = .black
+        self.contentView.addSubviews(imageView, titleLabel1, titleLabel2)
+        self.imageView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+        }
+        titleLabel1.snp.makeConstraints {
+            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        titleLabel2.snp.makeConstraints {
+            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        imageView.snp.makeConstraints {
+            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+    }
+}

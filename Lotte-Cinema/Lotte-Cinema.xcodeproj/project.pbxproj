@@ -12,8 +12,8 @@
 		1D5962772A18992A0050979A /* MovieFeedCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962762A18992A0050979A /* MovieFeedCVC.swift */; };
 		1D5962792A18993D0050979A /* HashtagLottecinemaCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5962782A18993D0050979A /* HashtagLottecinemaCVC.swift */; };
 		1D59627B2A18994B0050979A /* SpecialRoomCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59627A2A18994B0050979A /* SpecialRoomCVC.swift */; };
-		1D59627E2A1899610050979A /* FooterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59627D2A1899610050979A /* FooterCVC.swift */; };
-		1D79DBFF2A1E7FFC00FAE8E4 /* BannerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79DBFE2A1E7FFC00FAE8E4 /* BannerV.swift */; };
+		1D59627E2A1899610050979A /* HomeCollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59627D2A1899610050979A /* HomeCollectionViewFooter.swift */; };
+		1D79DBFF2A1E7FFC00FAE8E4 /* HomeCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79DBFE2A1E7FFC00FAE8E4 /* HomeCollectionViewHeader.swift */; };
 		1D79DC012A1E841F00FAE8E4 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79DC002A1E841F00FAE8E4 /* BaseVC.swift */; };
 		1D8DAAC02A0F77D700674FAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAABF2A0F77D700674FAC /* AppDelegate.swift */; };
 		1D8DAAC22A0F77D700674FAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DAAC12A0F77D700674FAC /* SceneDelegate.swift */; };
@@ -45,6 +45,8 @@
 		1D9E91DB2A1629BC003C2AF4 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		1DA6C6932A1FEF6700683769 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C6922A1FEF6700683769 /* CollectionViewController.swift */; };
 		1DA6C6B62A1FF3DB00683769 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C6B52A1FF3DB00683769 /* ScrollView.swift */; };
+		1DEECCC02A2A162C002CCAC1 /* EventV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEECCBF2A2A162C002CCAC1 /* EventV.swift */; };
+		1DEECCC22A308812002CCAC1 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEECCC12A308812002CCAC1 /* HomeHeaderView.swift */; };
 		36115F9A2A16678B008C0F77 /* NormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36115F992A16678B008C0F77 /* NormalButton.swift */; };
 		36115F9C2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36115F9B2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift */; };
 		362D08352A1D37E5002A8076 /* TheaterSelectButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */; };
@@ -105,9 +107,7 @@
 		36DAE0FE2A20F0440028D478 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAE0FD2A20F0440028D478 /* MyPageVC.swift */; };
 		36DAE1002A20F05A0028D478 /* TicketingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAE0FF2A20F05A0028D478 /* TicketingVC.swift */; };
 		36DAE1022A20F07A0028D478 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAE1012A20F07A0028D478 /* EventVC.swift */; };
-		36DAE1052A20F6020028D478 /* HomeMovieCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAE1042A20F6020028D478 /* HomeMovieCVC.swift */; };
 		36DAE1082A20FAB40028D478 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAE1072A20FAB40028D478 /* HomeDataModel.swift */; };
-		36DAE10A2A20FC3F0028D478 /* HomeImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DAE1092A20FC3F0028D478 /* HomeImageCVC.swift */; };
 		36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */; };
 		36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7EF2A114AA10038FD91 /* UIImage+.swift */; };
 /* End PBXBuildFile section */
@@ -118,8 +118,8 @@
 		1D5962762A18992A0050979A /* MovieFeedCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieFeedCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Cells/CVC/Inner/MovieFeedCVC.swift"; sourceTree = SOURCE_ROOT; };
 		1D5962782A18993D0050979A /* HashtagLottecinemaCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HashtagLottecinemaCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Cells/CVC/Inner/HashtagLottecinemaCVC.swift"; sourceTree = SOURCE_ROOT; };
 		1D59627A2A18994B0050979A /* SpecialRoomCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpecialRoomCVC.swift; path = "Lotte-Cinema/Source/Scenes/Home/Cells/CVC/Inner/SpecialRoomCVC.swift"; sourceTree = SOURCE_ROOT; };
-		1D59627D2A1899610050979A /* FooterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCVC.swift; sourceTree = "<group>"; };
-		1D79DBFE2A1E7FFC00FAE8E4 /* BannerV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerV.swift; sourceTree = "<group>"; };
+		1D59627D2A1899610050979A /* HomeCollectionViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewFooter.swift; sourceTree = "<group>"; };
+		1D79DBFE2A1E7FFC00FAE8E4 /* HomeCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewHeader.swift; sourceTree = "<group>"; };
 		1D79DC002A1E841F00FAE8E4 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		1D8DAABC2A0F77D700674FAC /* Lotte-Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lotte-Cinema.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8DAABF2A0F77D700674FAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +150,8 @@
 		1D8DAB1A2A10E6B900674FAC /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		1DA6C6922A1FEF6700683769 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		1DA6C6B52A1FF3DB00683769 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		1DEECCBF2A2A162C002CCAC1 /* EventV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventV.swift; sourceTree = "<group>"; };
+		1DEECCC12A308812002CCAC1 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		36115F992A16678B008C0F77 /* NormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalButton.swift; sourceTree = "<group>"; };
 		36115F9B2A166EDE008C0F77 /* TableViewCellReuseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellReuseProtocol.swift; sourceTree = "<group>"; };
 		362D08342A1D37E5002A8076 /* TheaterSelectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterSelectButtonView.swift; sourceTree = "<group>"; };
@@ -208,9 +210,7 @@
 		36DAE0FD2A20F0440028D478 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		36DAE0FF2A20F05A0028D478 /* TicketingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketingVC.swift; sourceTree = "<group>"; };
 		36DAE1012A20F07A0028D478 /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
-		36DAE1042A20F6020028D478 /* HomeMovieCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMovieCVC.swift; sourceTree = "<group>"; };
 		36DAE1072A20FAB40028D478 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
-		36DAE1092A20FC3F0028D478 /* HomeImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageCVC.swift; sourceTree = "<group>"; };
 		36FCD7ED2A114A7C0038FD91 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		36FCD7EF2A114AA10038FD91 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,7 +368,6 @@
 			isa = PBXGroup;
 			children = (
 				36DAE1032A20F5CB0028D478 /* CVC */,
-				1DEECCBB2A27B717002CCAC1 /* Footer */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -454,7 +453,8 @@
 		1DEECCBA2A27B70D002CCAC1 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				1D79DBFE2A1E7FFC00FAE8E4 /* BannerV.swift */,
+				1D79DBFE2A1E7FFC00FAE8E4 /* HomeCollectionViewHeader.swift */,
+				1DEECCC12A308812002CCAC1 /* HomeHeaderView.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -462,21 +462,19 @@
 		1DEECCBB2A27B717002CCAC1 /* Footer */ = {
 			isa = PBXGroup;
 			children = (
-				1D59627D2A1899610050979A /* FooterCVC.swift */,
+				1D59627D2A1899610050979A /* HomeCollectionViewFooter.swift */,
 			);
-			name = Footer;
-			path = CVC/Footer;
+			path = Footer;
 			sourceTree = "<group>";
 		};
 		1DEECCBE2A27B72B002CCAC1 /* Inner */ = {
 			isa = PBXGroup;
 			children = (
-				36DAE1092A20FC3F0028D478 /* HomeImageCVC.swift */,
-				36DAE1042A20F6020028D478 /* HomeMovieCVC.swift */,
+				1D5962722A1899160050979A /* MovieChartCVC.swift */,
+				1DEECCBF2A2A162C002CCAC1 /* EventV.swift */,
 				1D5962742A18991E0050979A /* EventCVC.swift */,
 				1D5962762A18992A0050979A /* MovieFeedCVC.swift */,
 				1D5962782A18993D0050979A /* HashtagLottecinemaCVC.swift */,
-				1D5962722A1899160050979A /* MovieChartCVC.swift */,
 				1D59627A2A18994B0050979A /* SpecialRoomCVC.swift */,
 			);
 			path = Inner;
@@ -735,6 +733,7 @@
 			children = (
 				1DEECCBA2A27B70D002CCAC1 /* Header */,
 				1DEECCBE2A27B72B002CCAC1 /* Inner */,
+				1DEECCBB2A27B717002CCAC1 /* Footer */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -845,7 +844,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D79DBFF2A1E7FFC00FAE8E4 /* BannerV.swift in Sources */,
+				1D79DBFF2A1E7FFC00FAE8E4 /* HomeCollectionViewHeader.swift in Sources */,
 				1DA6C6B62A1FF3DB00683769 /* ScrollView.swift in Sources */,
 				1D59627B2A18994B0050979A /* SpecialRoomCVC.swift in Sources */,
 				36DAE1002A20F05A0028D478 /* TicketingVC.swift in Sources */,
@@ -860,14 +859,14 @@
 				369E1B7B2A1640D400E46841 /* RunningTimeSelectVC.swift in Sources */,
 				1D8DAAF62A0F7D7400674FAC /* UIFont+.swift in Sources */,
 				36DAE0F62A20EEBC0028D478 /* TabbarVC.swift in Sources */,
-				1D59627E2A1899610050979A /* FooterCVC.swift in Sources */,
+				1D59627E2A1899610050979A /* HomeCollectionViewFooter.swift in Sources */,
 				1DA6C6932A1FEF6700683769 /* CollectionViewController.swift in Sources */,
 				1D5962752A18991E0050979A /* EventCVC.swift in Sources */,
 				36DAE0B72A1FC0B60028D478 /* PosterCVC.swift in Sources */,
-				36DAE10A2A20FC3F0028D478 /* HomeImageCVC.swift in Sources */,
 				36DAE0DB2A1FCC9C0028D478 /* Constants.swift in Sources */,
 				36A6D31C2A16CCD900D71840 /* TimeCVC.swift in Sources */,
 				36DAE0D72A1FCB220028D478 /* GetService.swift in Sources */,
+				1DEECCC22A308812002CCAC1 /* HomeHeaderView.swift in Sources */,
 				36DAE0FE2A20F0440028D478 /* MyPageVC.swift in Sources */,
 				362D08352A1D37E5002A8076 /* TheaterSelectButtonView.swift in Sources */,
 				36DAE0B52A1FC0B60028D478 /* TrailerCVC.swift in Sources */,
@@ -880,7 +879,6 @@
 				36DAE0BD2A1FC0B60028D478 /* CinemaChipView.swift in Sources */,
 				36DAE0BB2A1FC0B60028D478 /* MovieInfoNavigationView.swift in Sources */,
 				36DAE0B92A1FC0B60028D478 /* InfoCollectionViewHeader.swift in Sources */,
-				36DAE1052A20F6020028D478 /* HomeMovieCVC.swift in Sources */,
 				36DAE0EC2A1FD60C0028D478 /* SelectedTheaterCVC.swift in Sources */,
 				36DAE0B42A1FC0B60028D478 /* SynopsisCVC.swift in Sources */,
 				36DAE0B32A1FC0B60028D478 /* ActorBackgroundCVC.swift in Sources */,
@@ -896,6 +894,7 @@
 				36DAE0BC2A1FC0B60028D478 /* CinemaInfoVIew.swift in Sources */,
 				36FCD7F02A114AA10038FD91 /* UIImage+.swift in Sources */,
 				36DAE0E22A1FD2110028D478 /* TheaterSelectNavigationView.swift in Sources */,
+				1DEECCC02A2A162C002CCAC1 /* EventV.swift in Sources */,
 				36FCD7EE2A114A7C0038FD91 /* ImageLiterals.swift in Sources */,
 				1D5962732A1899160050979A /* MovieChartCVC.swift in Sources */,
 				369E1B852A1643F900E46841 /* TheaterUnitCVC.swift in Sources */,
