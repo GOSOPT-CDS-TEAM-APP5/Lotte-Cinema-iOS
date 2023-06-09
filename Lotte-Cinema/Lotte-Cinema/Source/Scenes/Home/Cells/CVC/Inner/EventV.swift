@@ -6,16 +6,10 @@ class EventV: UICollectionViewCell {
     
     static let identifier: String = "EventV"
     
-    private let eventLabel = UILabel().then {
-        $0.font = .NotoSansBold(ofSize: 20)
-        $0.textColor = .black
-    }
-    private let showallButton = UIButton().then {
-        $0.setTitle("전체보기 >", for: .normal)
-        $0.titleLabel?.font = .NotoSansRegular(ofSize: 12)
-        $0.setTitleColor(UIColor.g_400, for: .normal)
-    }
     private let yellowImage = UIImageView(image: UIImage.eventPhoto1)
+    private let orangeView = UIView().then {
+        $0.backgroundColor = .orange
+    }
     private let Button1 = UIButton().then {
         $0.setTitle("추천", for: .normal)
         $0.titleLabel?.font = .NotoSansRegular(ofSize: 12)
@@ -35,6 +29,7 @@ class EventV: UICollectionViewCell {
         $0.backgroundColor = .sm_green
     }
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setLayout()
@@ -45,35 +40,30 @@ class EventV: UICollectionViewCell {
     }
     
     private func setLayout() {
-        self.contentView.backgroundColor = .black
-        self.contentView.addSubviews(eventLabel, showallButton, yellowImage, Button1, Button2, Button3)
-        self.eventLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-        }
-        self.showallButton.snp.makeConstraints {
-            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview()
+        self.contentView.backgroundColor = .white
+        self.contentView.addSubviews(orangeView, yellowImage, Button1, Button2, Button3)
+        
+
+        self.orangeView.snp.makeConstraints {
+            $0.height.equalTo(400)
+            $0.width.equalTo(342)
+            $0.centerX.centerY.equalToSuperview().inset(16)
         }
         self.yellowImage.snp.makeConstraints {
-            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(orangeView)
+            $0.leading.equalTo(orangeView)
         }
         self.Button1.snp.makeConstraints {
-            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(orangeView)
+            $0.leading.equalToSuperview().offset(16)
         }
         self.Button2.snp.makeConstraints {
-            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(orangeView)
+            $0.leading.equalTo(Button1)
         }
         self.Button3.snp.makeConstraints {
-            $0.top.equalTo(self.imageView.snp.bottom).offset(11)
-            $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(orangeView)
+            $0.leading.equalTo(Button2)
         }
     }
 }
