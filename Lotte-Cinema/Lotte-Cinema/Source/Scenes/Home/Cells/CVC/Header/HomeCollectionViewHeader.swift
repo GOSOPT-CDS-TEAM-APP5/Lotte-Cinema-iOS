@@ -64,7 +64,7 @@ class HomeCollectionViewHeader : UICollectionReusableView {
     private func setLayout() {
         self.addSubview(contentView)
         contentView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         contentView.addSubviews(posterImg,lotteImg,ticket_shake,ticketIcon,popcornIcon)
         

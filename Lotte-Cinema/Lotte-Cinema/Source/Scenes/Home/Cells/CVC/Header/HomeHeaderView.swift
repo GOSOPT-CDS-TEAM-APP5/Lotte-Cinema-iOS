@@ -17,7 +17,7 @@ enum HomeCellType {
 }
 
 class HomeHeaderView: UICollectionReusableView {
-    static let identififer: String = "HomeHeaderView"
+    static let identifier: String = "HomeHeaderView"
     
     private let titleLabel = UILabel().then {
         $0.font = .NotoSansBold(ofSize: 20)

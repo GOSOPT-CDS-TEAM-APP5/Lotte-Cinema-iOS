@@ -6,6 +6,10 @@ class EventV: UICollectionViewCell {
     
     static let identifier: String = "EventV"
     
+//    override func setStyle() {
+//        collectionView.do {
+//            $0.register(MovieChartCVC.self, forCellWithReuseIdentifier: MovieChartCVC.identifier)}
+    
     private let yellowImage = UIImageView(image: UIImage.eventPhoto1)
     private let orangeView = UIView().then {
         $0.backgroundColor = .orange
