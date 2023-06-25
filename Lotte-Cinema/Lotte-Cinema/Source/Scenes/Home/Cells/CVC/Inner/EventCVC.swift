@@ -23,22 +23,10 @@ class EventCVC: UICollectionViewCell {
         self.setLayout()
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        self.imageView.image = nil
-//        self.titleLabel.text = ""
-//    }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
-//    internal func bindData(image: UIImage,
-//                          title: String) {
-//        self.imageView.image = image
-//        self.titleLabel.text = title
-//    }
-    
+
     private func setLayout() {
         self.contentView.backgroundColor = .black
         self.contentView.addSubviews(imageView, titleLabel1, titleLabel2)
@@ -62,3 +50,6 @@ class EventCVC: UICollectionViewCell {
         }
     }
 }
+
+1. 어떤 프로젝트에서 할지 확실시할것
+2. 디벨롭서 최신 pull받고 이슈파서 새로 브런치파서 작업

@@ -11,6 +11,7 @@ final class HashtagLottecinemaCVC: UICollectionViewCell {
         self.setLayout()
     }
     
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         self.imageView.image = nil

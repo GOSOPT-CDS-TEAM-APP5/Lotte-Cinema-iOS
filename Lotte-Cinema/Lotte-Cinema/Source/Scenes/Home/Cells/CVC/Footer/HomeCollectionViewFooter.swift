@@ -9,13 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeCollectionViewFooter : UICollectionReusableView {
+final class HomeCollectionViewFooter : UICollectionReusableView {
     
     //MARK: - Life Cycles
-    init() {
-        super.init(frame: .zero)
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setLayout()
